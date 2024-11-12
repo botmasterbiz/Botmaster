@@ -1,0 +1,760 @@
+A Taxonomy of AgentOps for Enabling Observability of
+Foundation Model based Agents
+LIMING DONG, CSIRO’s Data61, Australia
+QINGHUA LU, CSIRO’s Data61// UNSW, Australia
+LIMING ZHU, CSIRO’s Data61// UNSW, Australia
+Theever-improvingqualityofLLMshasfueledthegrowthofadiverserangeofdownstreamtasks,leadingtoan
+increased demand for AI automation and a burgeoning interest in developing foundation model (FM)-based
+autonomousagents.AsAIagentsystemstacklemorecomplextasksandevolve,theyinvolveawiderrangeof
+stakeholders, including agent users, agentic system developers and deployers, and AI model developers. These
+systemsalsointegratemultiplecomponentssuchasAI agentworkflows,RAGpipelines,promptmanagement,
+agent capabilities, and observability features. In this case, obtaining reliable outputs and answers from these
+agentsremainschallenging,necessitatingadependableexecutionprocessandend-to-endobservabilitysolutions.
+To build reliable AI agents and LLM applications, it is essential to shift towards designing AgentOps platforms
+thatensureobservabilityandtraceabilityacrosstheentiredevelopment-to-productionlife-cycle.Tothisend,
+we conducted a rapid review and identified relevant AgentOps tools from the agentic ecosystem. Based on this
+review, we provide an overview of the essential features of AgentOps and propose a comprehensive overview of
+observabilitydata/traceableartifactsacrosstheagentproductionlife-cycle.Ourfindingsprovideasystematic
+overview of the current AgentOps landscape, emphasizing the critical role of observability/traceability in
+enhancing the reliability of autonomous agent systems.
+CCS Concepts: •Software and its engineering →Software design engineering ;Software configuration
+management and version control systems .
+Additional Key Words and Phrases: ApentOps, Traceability, Observability
+ACM Reference Format:
+LimingDong,QinghuaLu,andLimingZhu.2025.ATaxonomyofAgentOpsforEnablingObservabilityof
+Foundation Model based Agents. 1, 1 (November 2025), 19 pages. https://doi.org/XXXXXXX.XXXXXXX
+1 INTRODUCTION
+The ever-improving quality of Large Language Models (LLMs) and their remarkable capabilities to
+understandandgeneratehuman-likereasoningandcontenthavesparkedthegrowthofadiverserange
+ofdownstreamtasksusingfoundationmodels(FMs).However,LLMsexhibitlimitations,particularly
+inunderstanding andperforming complexchainsof tasks.This hastriggered anincreasingdemand
+for AI automation, leading to the rapid development of LLM applications, particularly FM-based
+autonomous agents
+WiththeiterationofvariouslargelanguagemodelAPIsandtheopen-sourcingofvariousAIagent
+frameworks, FM-based autonomous agents have gained extensive attention, research, and application
+inacademiaandindustry.FM-basedagentshaveachievedgoodresultsinmanytasks,suchastext
+Authors’ addresses: Liming Dong, CSIRO’s Data61, Sydney, Australia, liming.dong@data61.csiro.au; Qinghua Lu, CSIRO’s
+Data61// UNSW , Sydney, Australia, qinghua.lu@data61.csiro.au; Liming Zhu, CSIRO’s Data61// UNSW , Sydney, Australia,
+liming.zhu@data61.csiro.au.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+providedthatcopiesarenotmadeordistributedforprofitorcommercialadvantageandthatcopiesbearthisnoticeandthe
+fullcitationonthefirstpage.Copyrightsforcomponentsofthisworkownedbyothersthantheauthor(s)mustbehonored.
+Abstractingwithcreditispermitted.Tocopyotherwise,orrepublish,topostonserversortoredistributetolists,requiresprior
+specific permission and/or a fee. Request permissions from permissions@acm.org.
+©2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+XXXX-XXXX/2025/11-ART $15.00
+https://doi.org/XXXXXXX.XXXXXXX
+, Vol. 1, No. 1, Article . Publication date: November 2025.arXiv:2411.05285v1  [cs.AI]  8 Nov 20242 Liming Dong, Qinghua Lu, and Liming Zhu
+summarization, translation, writing assistance, programming assistance, and game generation etc.
+They have also been applied in software engineering scenarios, such as Devin AI 1, Chatdev 2,
+SWE-agent 3.
+1.1 New challenges of agentic systems
+FM-based autonomous agents downstream tasks can produce varied outputs, from structured data to
+unstructured formats like language and images, or even interact directly with tools via user interfaces.
+Therefore, FM-based autonomous agents upstream systems are complex and often inscrutable. Their
+abilitytolearnfromvastdatasetstoperformawiderangeoftasksmakesAIagenticsystemspose
+new challenges[29]:
+•Lack of control in decision planning . Current FM-based autonomous agents approaches delegate
+decision-making to the agents, determining when and what actions to perform based on previous
+tasks and automatic/human/cross feedback, often with minimal validation. Due to a vast action space
+and varied feedback, agents can easily become confused and perform sub-optimal actions [36].
+•AIagenticsysteminputandbehaviouraremorecomplex. MostAIassistantsaredesignedfor
+single-iteration tasks, such as “summarize this text”. A significant challenge in these applications is
+ensuringtheaccuracyandtrustworthinessoftheoutputsproducedbyLLMs.Consequently,LLM
+models have always necessitated careful monitoring of both the model outputs and the data pipelines
+to operate reliably. In contrast, compound AI agentic systems exhibit considerably more complex
+behaviorforeachinput.Forexample,uponreceivingauser-definedgoaltoperformspecifictasks,an
+agent mayrequire multiple iterationsto completethe more complex,multi-hop tasks,complicating
+theunderstandingoftheir decision-makingprocess andthe debuggingof specificincorrectactions
+[19].
+•CompliancewiththeEUAIActthroughObservability. AsglobalrecognitionoftheneedforAI
+governanceincreases,itisexpectedthatregulationssimilartotheEUAIActwillcontinuetoshapethe
+futureofresponsibleAIdevelopmentanddeployment[ 20].TheEUAIAct 4setsspecificrequirements
+to ensure the traceability and observability of high-risk AI systems. The first requirement, mandates
+thathigh-riskAIsystemsmust“technicallyallowfortheautomaticrecordingofevents(logs)over
+the lifetime of the system”, (Article 12). Additionally, the second set of requirements emphasizes the
+need for high-risk AI systems to “...ensure a level of traceability of the functioning of a high-risk AI
+system that is appropriate to the intended purpose of the system”, (Articles 79(1), 72, and 26(5)).
+Ensuring compliance with the EU AI Act necessitates the implementation of comprehensive
+observability solutions[ 14]. These solutions must provide robust monitoring and logging capabilities
+to track the functioning and decision-making processes of AI systems throughout their life-cycle.
+1.2 Concept
+•Agent.LLM-basedagentreferstodevelopingAIsystemsthatcanactautonomously,makedecisions
+and perform complex tasks with minimal human intervention[4].
+•Agentic System. LLM-based agents can be defined as GenAI systems that serve a user’s goals by
+performingactionsthatinteractwithagenticsystemsexternaltotheLLMitself[ 28].Suchsystems
+incorporateLLMsasmodulesinacontrolflowdesignedtosolvetasksthroughtheuseofexternal
+tools, planning, memory, and the execution of multiple, iterative steps of processing actions [ 26,37].
+1Introducing Devin, the first AI software engineer. https://www.cognition.ai/blog/introducing-devin
+2Communicative Agents for Software Development. https://github.com/OpenBMB/ChatDev
+3SWE-agent,softwareengineeringagentsthatcanresolveissuesinrealGitHubrepositories.https://github.com/princeton-
+nlp/SWE-agent
+4The EU Artificial Intelligence Act. https://artificialintelligenceact.eu
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 3
+•AgentOps. WiththerapidevolutionofLLMperformance,bothlarge-scalesoftwareenterprisesand
+early-stage startups are increasingly transitioning their business projects to LLM-based applications,
+i.e. agent projects. This shift has created a growing demand for AI agent system infrastructure
+platforms, giving rise to the concept of AgentOps.
+AgentOpsservesasaDevOps/MLOps-likeent-to-endplatform,encompassingthedevelopment,
+evaluation, testing, deployment, and monitoring of agentic system for the operational management of
+agent projects in production environments [8].
+•Agent Observability. Currently, the development of AgentOps platforms in the industry is in
+itsearlystages.ObservabilityiscrucialforLLM-basedagents,anditsimportancegrowswiththe
+complexity of the agentic system. It should be integrated into the AgentOps platform from the
+beginning to support the agent system’s reliability, rather than added later as an afterthought[ 13].
+Observability tools provide full visibility into the entire production process by tracing every step in
+the chain of events.
+•TraceableArtifacts. IntheeraofObservability2.0[ 24],dataisstoredinarbitrarilywidestructured
+log events, often with trace and span IDs appended. Users can visualize events over time as traces, or
+sliceanddicethedatatozoominonindividualeventsorzoomouttoabird’s-eyeview.Therefore,
+platform engineers need to understand what data or artifacts should be recorded and traced in the
+AgentOps platformduring theproduction ofthe agentsystem to improvethe system’sobservability
+andtraceability.Tomaintainconsistentterminology,werefertothosedataasagenttraceableartifacts,
+which are by-product data generated throughout the agent’s development to production life-cycle.
+1.3 Research Goal
+It is crucial to design AgentOps platforms that support developers in building more sophisticated
+andefficientagenticsystemsbyintegratingacomprehensiveobservabilitysolutionforAgentOps.
+Therefore,thispaperaimstoanalyzeandsummarizethedata(i.e.artifacts)thatshouldbetracked
+throughout the entire life-cycle of agent production to enable AgentOps observability. Our study
+seeks to address the following research question:
+•RQ: What data/artifacts should be traced in AgentOps?
+Thisreviewaimstoaccomplish severalkeyobjectives.First,byinvestigatingexistingAgentOps
+tools and providing an overview of the latest observability features, it seeks to support the design
+ofmoreeffectiveAgentOpsplatforms.Additionally,bysummarizingacomprehensiveoverviewof
+traceable data and artifacts in agentic systems, it aims to help researchers and practitioners gain a
+deeper understanding of the entire agent project life-cycle. This understanding of data generated
+duringtheagentproductionprocesswillenhancetheobservabilityandtraceabilityofagenticsystems,
+ultimately contributing to the overall reliability of agent systems output.
+2 METHODOLOGY
+Toachievethisgoal,weconductedamultivocalreviewfollowingestablishedguidelines[ 10],focusing
+on the search for existing AgentOps tools across gray literature, open-source project platforms, and
+other relevant sources.
+2.1 Data Collection
+Given that the understanding of the AgentOps concept and the exploration of associated tools in the
+marketplacearestillinanearlystage,webroadenedourreviewtosearchforandidentifyobservability
+tools related to the entire agent life-cycle, from “dev” to “ops”.
+, Vol. 1, No. 1, Article . Publication date: November 2025.4 Liming Dong, Qinghua Lu, and Liming Zhu
+2.1.1 Data Sources. This review identified AgentOps-relevant tools from multiple sources, includ-
+ing GitHub open-source projects searching 5, the AI Automation Market Map 6, and the Emerging AI
+Agent Infrastructure 7tool stack.
+•GitHub. Our initial data source involved searching the keyword “Agentops” on GitHub, where
+we found an “AgentOps” project 8designed primarily for monitoring AI agent cost management
+through the AgentOps dashboard and session replay analysis. We also found a GitHub project called
+“Awesome-LLMOps” 9,acurated listoftop LLMOpstoolsfordevelopers. Althoughourstudydoes
+notspecificallyfocusonLLMmodelprojects,sometoolslistedin “Awesome-LLMOps” aredesigned
+formonitoringtheobservabilityofLLMapplications,whichalsoinvolveAIagentprojects.Therefore,
+thetoollist from “Awesome-LLMOps” hasbeenincluded asoneofthe datasourcesforidentifying
+AgentOps-relevant tools.
+•GreyLiterature. Theseconddatasourceisgreyliterature,suchasAIagenttoolstackssummarized
+by venture capital firms and software investors. Notable examples include Insight Partners’ AI
+Automation Market Map and Madrona’s list of early-stage AI agent infrastructure tools.
+2.1.2 Selection Criteria. For this paper, we focused on tools related to the entire agent lifecycle,
+from development (“dev”) to operations (“ops”). We conducted the tool selection process[ 17] from
+the multi data sources[ 10] mentioned above. To identify AgentOps-relevant tools that support agent
+creation, development, and monitoring, the following criteria were applied:
+i)Relevance to AgentOps: The tool could support tasks related to either the development or
+operations of AI agents, covering key phases of the agentops life-cycle, including development
+toolssuchasagent-buildingframeworksandoperationaltoolslikeagentobservabilityplatforms.
+ii)Availableonlinedoc: Thetool’swebsiteofferswell-structureddocumentationthatisreadily
+available online.
+2.2 AgentOps-Relevant Tools
+We identified a collection of AgentOps-relevant tools (see Fig.1) that support developers in building,
+evaluating, and especially monitoring the observability of AI agents.
+2.2.1 AgentOps Tool. First of all, we were fortunate to find a project called AgentOps on GitHub.
+AgentOpsaimstohelpdevelopersbuild,evaluate,andmonitorAIagents,facilitatingthetransition
+from prototype to production. Within AgentOps, the main activities, such as LLM interactions, tool
+usage, and actions, are categorized as “events” executed by agents. It is beneficial to define and track
+howmuchtimeeachaction(orstep)takes.AgentsprimarilyinitiateLLMcalls,whichcanleadto
+APIortoolcalls.Actionsencompassothersignificantprocedures,suchasexecutingfunctionsand
+takingscreenshots.AgentOpsprovidesacomprehensivedashboardfortrackingagentperformance,
+session replays, and custom performance reporting. After setting up AgentOps, multiple execution of
+agent is recorded in each session and the data is automatically recorded for developers.
+ThereisnodoubtthattheAgentOpsplatformisstillaworkinprogress.Therefore,inourpaper,
+we further reviewed the main toolset features related to the other major phases of agent development.
+This is beneficial to our paper as it provides readers with a more systematic and comprehensive
+understanding of the observability data throughout the AgentOps life-cycle.
+5GitHub. https://github.com
+6AIAutomationMarketMap. https://www.insightpartners.com/wp-content/uploads/2024/05/AI-automation-market-map-
+2024.png
+7The Rise of AI Agent Infrastructure. https://www.madrona.com/the-rise-of-ai-agent-infrastructure/
+8AgentOps. https://github.com/AgentOps-AI/agentops
+9Awesome-LLMOps. https://github.com/tensorchord/Awesome-LLMOps
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 5
+Agent Dev Tool
+ Agent Observability Tool
+Fig. 1. AgentOps Relevant Tool
+2.2.2 LLM Applications Observability Tool. It is relatively easy to build a prototype of an LLM
+application,buttheperformanceoftheseprototypesisofteninsufficientforproductionuse.Therefore,
+it is necessary to integrate an observability platform to help developers bridge the gap between
+prototypeandproduction.Suchaplatformwouldsupportdevelopersincloselytesting,evaluating,
+monitoring, debugging, analyzing, and iterating on LLM applications.
+WehavecollectedarangeofLLMapplicationobservabilityplatforms,offeringcomprehensive
+coverage across the tool stack—from language model-specific tracing tools (such as Langtrace,
+LangSmith, Langfuse) to broader AI system performance monitoring solutions (such as Arize,
+Datadog). These LLM applications also involve LLM-agent projects and are likely to serve as
+referenceplatformsforthedesignofAgentOpsplatformstoenhanceagentsystemobservabilityin
+the near future. This is why we included them in our review.
+2.2.3 AgentBuildingFramework. TheobservabilitytoolsprovidedbyAgentOpsareoftenintegrated
+with frameworks that supportthe construction of autonomous agents,allowingdevelopers tobuild,
+customize,manage, andrun theseagentsefficiently. Forinstance, theSuperAGI frameworkoffersa
+detailed view of agent architecture, workflows, tools, and various data sheets, providing valuable
+insightsthatdirectlycontributetoaddressingourresearch questions.Anotherexample isCrewAI,
+amulti-agentframeworkdesignedtofacilitatecollaborationamongrole-playingAIagents,which
+proveshelpfulforcollectingdatainmorecomplexagenticsystems.Additionally,Difyisanopen-
+sourceplatformforbuildingAIapplications.ByintegratingLLMOps,itstreamlinesthedevelopment
+process for generative AI solutions, making it accessible to both developers and non-technical users.
+2.3 Key Features
+We summarized the key features (as shown in Table 1) of identified AgentOps relevant tool.
+, Vol. 1, No. 1, Article . Publication date: November 2025.6 Liming Dong, Qinghua Lu, and Liming Zhu
+Table 1. AgentOps Relevant Tools Key Features
+Key Aspects Key Features Description
+Agent
+CreationProvision, Custom, Spawn & Deploy
+Autonomous AI AgentsCreate production-ready & scalable autonomous
+agents.
+Extend Agent Capabilities with ToolkitsAdd Toolkits from marketplace to agent
+workflows.
+Extend Agent Capabilities with Multiple
+Vector DBsConnect to multiple Vector DBs to enhance
+agent’s performance.
+Extend Agent Capabilities with
+(fine-tuned) ModelsCustom fine-tuned models for business specific
+use cases.
+Prompt
+ManagementPrompt Versioning and ManagementKeep track of different versions of prompts used
+in agents. Useful for A/B testing and optimizing
+agent performance.
+Prompt Playground with Model
+ComparisonsTest and compare different prompts and models
+for agents before deployment.
+Prompt Injection Detection Identify potential code injection and secret leaks.
+Evaluation
+and TestTest Agents Against Benchmarks and
+Leaderboards.Createadataset;Definemetrics;RunEvaluations;
+Comparing results; Track results over time etc.
+Evaluate Agent in Diverse StepsEvaluate final response- Evaluate the agent’s final
+response.
+Evaluate single step-Evaluate any agent step in
+isolation (e.g., whether it selects the appropriate
+tool).
+Evaluate trajectory- Evaluate whether the agent
+took the expected path (e.g., of tool calls) to
+arrive at the final answer.
+Human
+FeedbackCollect Explicit FeedbackDirectly prompt the user to give feedback, this
+can be a thumb up or a thumb down.
+Collect Implicit FeedbackMeasure the user’s behavior, this can be time
+spent on a page, click-through rate.
+MonitoringAgent Analytics DashboardMonitor diverse level and dimension statistics
+metrics about agents.
+LLM Cost Management and TrackingTrack spend (token cost) with foundation model
+providers.
+Tracing Trace Agent Execution ProcessTrace each agent run, e.g., the whole chain,
+retrieval, LLM call, Tool Call etc.
+Trace evaluation run
+Trace user feedback
+2.3.1 Agent Creation. Agent development tools, such as autonomous AI frameworks, enable
+developerstobuild,manage,andrunautonomousagentsbytranslatinghumangoalsintocomputational
+actions[35]. When creating agents, these tools extend agent capabilities by adding toolkits from
+marketplacestoagentworkflows,connectingtomultipleknowledgedatabasestoenhanceperformance,
+and integrating customized fine-tuned models for specific business use cases.
+2.3.2 Prompt Management. Prompt versioning and management allow developers to store and
+track different versions of prompts, making it invaluable for testing, optimizing[ 5], and reusing
+promptsacrossvariousstagesofagentproduction.ThePromptplaygroundenablesdeveloperstoedit,
+import,andtestvariousprompttemplateswithdifferentmodels,helpingtocompareperformance
+beforedeployment. Consistentmonitoringofprompts isalsocrucialfor maintainingthehealthand
+securityofagenticsystems,especiallyindetectingissuessuchascodeinjectionrisksandsecretleaks
+within prompts.
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 7
+2.3.3 Evaluation and Testing. Evaluationiscrucialtoensurethatagentsperformtheirintended
+functions effectively and safely in various environments. The typical evaluation process involves
+creatingasuitableevaluationdataset,definingclearcriteriaandmetrics,andconductingthorough
+testing based on these predefined metrics. It is important to benchmark the agent’s performance
+against standard leaderboards or comparable systems. Specific to agentic system, evaluation goes
+beyond simply assessing the correctness of the final output. It is equally important to track the
+agent’sexecutionstepsandevaluateintermediateoutputstoensurethereliabilityofthefinalresult.
+LangSmith 10introduces two additional dimensions of agent evaluation:
+•Step-by-Step Evaluation: Assess each individual step the agent takes in isolation, such as
+determining whether it selects the appropriate tool.
+•TrajectoryEvaluation:Examinewhethertheagentfollowedtheexpectedsequenceofactions,
+including the series of tool calls, to arrive at the final answer. This ensures that the decision-making
+process is sound, not just the outcome.
+2.3.4 Feedback. Human feedback is a great source to evaluate the quality of an agent’s output.
+Feedback is collected as a score and attached to an execution trace or an individual LLM generation.
+Langfuse 11defineddifferenttypesoffeedbackthatcanbecollectedthatvaryinquality,detail,and
+quantity.
+•ExplicitFeedback:Directlyprompttheusertogivefeedback,thiscanbearating,alike,adislike,
+a scale or a comment. While it is simple to implement, quality and quantity of the feedback is often
+low.
+•ImplicitFeedback:Measuretheuser’sbehavior,e.g.,timespentonapage,click-throughrate,
+acceptingorrejectingfinaloutput.Thistypeoffeedbackismoredifficulttoimplementbutisoften
+more frequent and reliable.
+2.3.5 Monitoring. Developerscancontinuouslymonitoragentperformanceandenhanceobservabil-
+itythroughouttheagent’sexecutionprocessbycloselytrackingitsoutputs.Thisinvolveskeeping
+track of monitoring metrics (e.g., latency and cost[ 31]), associating feedback with agent runs to
+evaluateperformance,anddebuggingissuesbydivingintospecifictracesandspanswhereerrors
+occurred. Monitoring also helps identify the root causes of unexpected results, errors, or latency
+issues, allowing developers to optimize performance based on real-time feedback.
+2.3.6 Tracing. AgentOps is designed to support developers in transitioning from prototype to
+production, ensuring that the work doesn’t stop once the agent is created and initial tests are passed.
+Within the observability tool, agents execute increasingly complex tasks and iterative runs, such
+as chains, tool-assisted agents, and advanced prompts. By adding traces to agent production life-
+cycle[3,22], AgentOpscaptures the entire process—fromthe moment a usersends a queryto the
+final response—helping developers understand each step and identify the root causes of any issues.
+3 STUDY RESULT
+AgentOps is a comprehensive platform that covers the entire life-cycle of agent development,
+including execution, evaluation, testing, and post-deployment tracing and monitoring. To clarify
+the data generated throughout the AgentOps, we conducted an in-depth analysis of the platform’s
+key components and features, summarizing the data items (organized as traceable artifacts in our
+paper) that can be recorded. The following results present a comprehensive overview of the traceable
+artifacts within the AgentOps life-cycle.
+10LangSmith: Evaluate an agent. https://docs.smith.langchain.com/tutorials/Developers/agents
+11Langfuse: Type of Feedback. https://langfuse.com/docs/scores/user-feedback
+, Vol. 1, No. 1, Article . Publication date: November 2025.8 Liming Dong, Qinghua Lu, and Liming Zhu
+Agent Creation Agent Registry
+Guardrails (Fig.5)Agent Role Type
+CoordinatorWorkerToolkit Coding/Email/File/Github...LLM Models
+API KeyTemperatureModel Name Prompt (Fig.4)Input Data (Fig.3)User’s GoalAgent NameAgent VersionAgent ID
+Fig. 2. Agent Creation Registry
+3.1 Agent Creation Registry
+Creatingnewagents,enablinguserstoextensivelycustomizeagentstosuittheirspecificrequirements.
+We refer to the collection of data items related to agent creation as artifact called an Agent Creation
+Registry (or card) ,drawinginspirationfrompriorworkondocumentingAIsystems,suchasAgent
+Cards [3], Datasheets [11], and Model Cards [15, 25].
+•Agent Identity. Developers begin by assigning a unique ID and name to the agent. This
+allows for clear identification and makes it easier to manage and track the agent throughout its
+life-cycle.
+••Goals.Theseareuser-defineddesiredoutcomesorobjectivesthatguidetheagent’soverall
+behavior and actions. Instructions. Users can provide actionable guidelines that direct the
+agent on how to achieve the defined goals, assisting in making appropriate decisions.
+•AgentInputData. Developerscanincorporateinputdatafrommultiplesources(seeFig.3),
+which the agent will process during its operation.
+•Prompt.Promptsserveasthefoundationalelementfortheagent’sdecision-makingandbehavior,
+incorporatingmultiplelayersofinformation,suchasgoals,instructions,andcontextualdata.
+These prompts guide the agent’s actions and responses, shaping its overall performance. For a
+detailed breakdown of the structure of prompts registry, please refer to Fig.4.
+•LLM Model/Toolkits. When creating an agent, users select the LLM model for function calls
+andchoosethenecessarytoolkitsthattheagentwillusetointeractwithitsenvironmentand
+perform tasks.
+•AgentRoleType. Userscaneithercreatecustomagentrolesormodifyexistingones.Agent
+roles are classified based on job responsibilities:
+–Worker.Agents can take on roles such as “Researcher” or “Writer”,functioning as part of a
+team with specific skills and responsibilities.
+–Developerscanalsocreate Coordinator/Supervisor agents,underwhichmultipleworker
+agents operate. These subordinate agents follow the instructions of the supervisor.
+•Guardrails. Constraints, or guardrails, are predefined during the agent creation process to
+ensure the agent operates within specific guidelines and environmental boundaries. Developers
+can modify these constraints as needed to fine-tune the agent’s behavior and performance,
+allowing flexibility in setting targets, rules, and corresponding actions.
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 9
+Input Data Enhance Context
+RAG
+Retrieval ContextKnowledge BaseText VectorsKeywordSource DocQueryIn-context learning
+Task DescriptionContext ExamplePrompt
+Fig. 3. Input Data
+3.2 Enhancing Context
+Contextconstructionreferstotheprocessofgatheringrelevantinformationfromadditionalinputdata
+to provide the model with the necessary background knowledge [ 13]. Techniques such as In-Context
+Learning and Retrieval-Augmented Generation (RAG) are used to enrich input data, enabling the
+model to process it more accurately.
+3.2.1 In-Context Learning. In-ContextLearningisaformofcontinuallearningthatallowsamodel
+todynamicallyadapttonewinformationwithouttheneedforretrainingorfine-tuning.Ittypically
+involves the model interpreting a task description and generating the corresponding output based on
+agivenexampleandstructured promptinstruction .Thisapproachenablesthemodeltoincorporate
+real-time data, ensuring it remains current. A key advantage of In-Context Learning is that it avoids
+the computational cost of fine-tuning, thereby saving significant resources and time.
+3.2.2 RAGs. The training data for LLMs is typically based on publicly available information, and
+each training session requires substantial computational resources. As a result, LLMs often lack
+accesstoprivatedomainknowledgeandmaynotincludethemostup-to-dateinformationfromthe
+publicdomain.Toaddressthis limitation,acommonsolution istouseRAG.RAGutilizes auser’s
+query (e.g., through keyword search ortext vector search ) to match the most relevant external
+memorysources( sourcedocuments ,suchasdocuments,tables,orchathistory).Afterretrieving
+the relevant content, RAG reorganizes and integrates this information into the prompt as additional
+context. This process allows for the dynamic inclusion of domain-specific knowledge stored in a
+knowledge base , which can be incorporated into the agent’s input as retrieval context . A knowledge
+base consists of documents that can be uploaded by developers or operations teams, or synchronized
+from various data sources such as web pages, GitHub, or databases.
+3.3 Prompt
+Creating effective prompt templates is critical for optimizing agent performance. To effectively
+manage and version prompts, the collection of following prompt-related information could recorded
+as aprompt registry (or card) (see Fig.4).
+•Prompt Identity. Including standard fields such as ID, Name, and Version .
+•Prompt Templates Type. The Prompt Playground provides developers with the ability to edit,
+import,andtestvarious prompttemplates .LangSmithoffersachoicebetweentwotypesof
+prompttemplates 12:chat-styleprompts andinstructionalprompts .Chat-stylepromptsare
+designed for conversational agents, accepting a list of messages as input and responding with
+12LangSmith: Prompt Types. https://docs.smith.langchain.com/prompt_engineering/concepts
+, Vol. 1, No. 1, Article . Publication date: November 2025.10 Liming Dong, Qinghua Lu, and Liming Zhu
+Prompt Registry
+Prompt Optimisation Technique
+Tree-of-ThoughtPlan-and-Solve PromptingSelf-ConsistencyIterative PromptingChain-of-Thought(CoT) PromptingFew-Shot LearningZero-Shot LearningPrompt Template Info
+Chat HistoryToolsOutput FormatContext DocFew-shot ExampleInput QueryInstructionUser GoalPrompt Template Type
+Instruct-style promptChat-style promptPrompt NamePrompt VersionPrompt ID
+Fig. 4. Prompt
+anassistant-stylemessage.Instructionalprompts,ontheotherhand,formatasinglestringof
+input and are typically used for simpler tasks.
+•PromptTemplatesInfo. Tomakethepromptreusable,developerneedtobeabletodynamically
+modifyitbasedonasetofinputsdata.Thesetemplatescanincludemultipleinputsmessages 13,
+such as the user’s goals ,instructions for the agent, the user’s input question , andcontext
+information (e.g., previous chat history ) to guide the agent’s responses. Additionally, prompts
+may provide specific few-shot examples to shape the desired output format or style, as well
+as thetoolsthe agent can utilize for operations.
+•PromptOptimisationTechniques. Beyondmanualprompttemplatecreation,various prompt
+optimization strategiescanenhancetheperformanceofpromptsfedtoagents.Forexample,
+Schulhoff et al. [ 28] present a comprehensive taxonomy of 58 text-based prompting techniques
+in their survey. Among the most cited optimization techniques are Chain-of-Thought (CoT)
+Prompting[ 32], Few-Shot Learning[ 2], Zero-Shot Learning[ 18], Tree-of-Thought[ 21], Self-
+Consistency[16] and Plan-and-Solve Prompting[33] etc.
+3.4 Guardrails
+Constraints act as specific guardrails within which an agent must operate, ensuring that it adheres to
+definedguidelinesandfunctionsappropriatelywithintheintendedenvironment.Theseguardrailsare
+typicallypre-definedduringtheagentcreationprocess,butusersalsohavetheflexibilitytoinstantiate
+specific guardrails by setting targets, rules, and corresponding actions [30] (see Fig.5).
+13Agenta: Prompt Engineering. https://docs.agenta.ai/prompt_management/prompt_engineering
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 11
+Guardrails
+Guardrails Actions Block/Filter/Flag/Fall back/Human intervention/Defer Isolate ...Guardrails Rules Uniform/Priority-enabled strategy/Context-dependent/NegotiabilityGuardrails Targets StepPrompt/LLM/Dataset/RAG/Goal/Context/Memory/ Reasoning/
+Plans/Actions/Tools/Intermediate Results/Final Results
+Fig. 5. Guardrails
+•GuardrailTargets. Keytargetsforapplyingguardrailsincludeprompts,LLMmodels,external
+datasets, RAG, and agent-specific elements such as goals, context, actions, tools, intermediate
+results, and final outputs [12].
+•Guardrail Rules. Guardrail rules can be configured in different ways, including uniform rules
+[6], priority-enabled rules, context-dependent rules, and negotiable rules [12].
+•Guardrail Actions. Guardrail actions are crucial for addressing specific needs, such as ethical
+requirements. Key actions for applying guardrails include blocking, filtering, flagging, fallback
+mechanisms [ 7], human intervention [ 27], deferring, isolating [ 23], modifying [ 1], etc. For
+instance, guardrails can block certain inputs by identifying and preventing undesirable content,
+such as “bad” messages 14, using metrics like cosine distance between embeddings to detect
+and filter out similar examples.
+3.5 Agent Execution
+3.5.1 Planning. Planninginvolvesdevisingstep-by-stepactionsfromagiventask.Thenecessary
+inputsforagentplanning 15includethe agentgoal ,agentrole ,entiretaskdescription ,expected
+taskoutput ,tools,etc.Developersthenobserveanoutputthatincludesmultiple subtaskqueues
+andspecific actions,whichrepresenttheagent’sstep-by-steplogicgeneratedduringtheplanning
+phase (see Fig.6).
+•Task.Tasks are specific assignments completed by agents. They provide all necessary details
+forexecution,suchasa description ,theresponsibleagent ,requiredtools ,andmore,enabling
+a wide range of actioncomplexities.
+•Tool.A tool is a skill or function that agents can utilize to perform various actions. The
+intermediatestepoutputsofagentisusuallytheLLMcall.TheLLMcalloftencontainstool
+calls, indicating what action the agent should take next. This tool call can be used to determine
+agent selects a tool( e.g., from existing toolkit) to use, extracts the right parameters from the
+user query and agent task, then activate the tool callevent.
+•Action.Anactionmoduleenablestheagenttoutilizeexternaltools.Agentactionsaretypically
+triggeredbyuserrequeststosupporttheagent’sstep-by-stepplanningtasks.Keyelementsofan
+agentactioncallincludethe actiontrigger ,whichcausestheagenttoperformanaction(e.g.,a
+userquery).Theactionexecutioninvolvesthe actualtask orfunctiontheagentperforms,such
+as running a tool, browsing a website, or generating a response. Input data orparameters
+guide the execution of the action (e.g., a search term or dataset). The outcome or response
+producedbytheactionmaybereturnedtotheuserorutilizedinsubsequentplanningstepsand
+actions.
+3.5.2 Reasoning. Reasoning is the process of using existing knowledge to draw conclusions, make
+predictions,orconstructexplanations.Singleagentsgenerallyshowlimitedeffectivenessinreasoning
+tasks.However,multi-agentdiscussionsutilizemultipleLLMsasagentstocollectivelydiscussand
+14Arize: Guards. https://docs.arize.com/arize/llm-monitoring-and-guardrails/guardrails
+15CrewAI: Planning the crew execution Step-by-Step Plan for Task Execution. https://docs.crewai.com/concepts/planning
+, Vol. 1, No. 1, Article . Publication date: November 2025.12 Liming Dong, Qinghua Lu, and Liming Zhu
+Agent Execution
+Workflow
+Workflow TypeVariablesNodesMemory
+Short-term Memory
+Chat HistoryContextRecent InteractionsIntermediate OutcomesLong-term Memory
+Task ResultsPast ExecutionsKnowledge DatabaseRetrieval DocReasoning
+Reasoning ApproachReasoning TasksReasoning BenchmarksPlanning
+Planning Output
+Action
+Action ResponseParameterActual TaskAction Trigger(Sub-)Task Queue
+Expected OutputRequired ToolResponsible AgentTask DescriptionPlanning Input
+Expected OutputToolTaskAgent RoleAgent Goal
+Fig. 6. Agent Execution
+reasonthroughproblemsinteractively,leadingtoamorethoroughreasoningprocess.Throughtesting
+on challenging reasoning tasks across diverse reasoning benchmarks , multi-agent frameworks
+consistently outperform single-agent systems [34].
+3.5.3 Memory. The memory module stores and recalls past interactions. The agentic system
+comprises both short-term and long-term memory[ 9]. Short-term memory temporarily stores recent
+interactions andoutcomes , enabling agents to recall and utilize information relevant to their current
+context during execution. For example, agents can maintain contextover aconversation ortask
+sequence , resulting in more coherent and relevant responses. Long-term memory preserves valuable
+insightsandlearningsfrom pastexecutions ,allowingagentstobuildandrefinetheir knowledge over
+time. This enables agents to remember what they did right and wrong across multiple executions.
+3.5.4 Workflow. Workflowsreducesystemcomplexitybybreakingdowncomplextasksintosmaller
+steps (nodes), reducing reliance on prompt engineering and model inference capabilities, and
+enhancingtheperformanceofagentforcomplextasks.Nodesarethekeycomponentsofanagent
+workflow. Byconnecting nodeswithdifferent functionalities ,agent developercanexecuteaseries
+of operations within the workflow.
+3.6 Evaluation and Feedback
+3.6.1 Evaluation. Developers can create an evaluation template to systematically assess the quality
+of an agent’s output. The evaluation process typically involves the following artifacts:
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 13
+•Evaluation Dataset. To run evaluations, developers need to create or upload a datasetthat
+serves as the test setfor conducting either automated or human evaluations.
+•Evaluation Template. To generate a template for evaluation, developers must define the
+evaluation criteria and select appropriate aggregation metrics . This involves writing an
+experiment test script to specify the task and assess the agent’s effectiveness.
+•Evaluator Input. Evaluators are functions that measure the performance of the agent or LLM
+application. Typically, evaluators require several inputs, including the agent’s output , the
+reference answer (such as the expected output orground truth ), theagent’s input (e.g.,
+prompt,task description ), and any other relevant data.
+•EvaluatorOutput. Aftertheevaluationiscomplete,developerscanviewtheresults,whichare
+usuallypresentedaskey-valuepairsthatmaptothe evaluationmetrics ,alongwithnumeric
+scores.Theseresultsallowdeveloperstodisplayandcompareevaluationrunstounderstand
+the agent’s effectiveness across different models and benchmarks. Additionally, the evaluation
+resultsoftenprovide explanations orcomments onwhytheoutputmetorfailedtheevaluation
+criteria.
+3.6.2 Feedback. Inmanyapplications,particularlyforLLM-basedagents,collectinguserfeedback
+is crucial for understanding how the agent performs in complex, real-world tasks. A simple feedback
+mechanism, such as a thumbs-up or thumbs-down button, can be valuable for evaluating the final
+responses of a single LLM call.
+•HumanFeedbackForm. Inaformaluser-facingfeedbackform,developerscandefinefeedback
+tags and create a list of categories (e.g., Toxicity, Human Correctness, Answer Relevance).
+Each category is associated with a score. When providing feedback, users select one of these
+categories and assign a score, which is logged in both the valueandscorefields.
+•Feedback Loop. For instance, LangSmith allows developers to manually annotate traces with
+feedback, enabling the logging of both value and score for each agent run. This feature is
+particularlyusefulfor dynamicallyupdatingtheevaluationtestsetandgroundtruthby
+incorporating human feedback from each run . This process facilitates a more detailed
+inspection of the agent’s performance and allows for continuous updates to the dataset used for
+evaluation (see Fig.7).
+3.7 Tracing
+Onceagentdeveloperhavedeployedtheiragent,theycantraceitsexecutionprocesstounderstand
+and monitor its operations. This tracing provides a comprehensive view of all the steps involved
+in processing a request (see Fig.8)., helping to evaluate the agent’s performance and identify any
+issues. By reviewing each run (e.g., chains and calls) in the agent’s entire execution process, you can
+pinpoint problematic requests and trace errors back to their root cause.
+•Session.Sessions group multiple traces to represent a sequence of operations, such as the
+execution of an AI agent workflow. A session encapsulates a single execution instance of
+workflow, bringing together all agents, LLMs, actions, and related components under one
+complete view. Session tracking allows for session-level visualization, analytics, and automatic
+issuedetection.Asessionisdefinedbyaunique sessionID ,whichgroupsrelatedtracesand
+providesvaluabledatasuchas totalexecutiontime ,tokencost ,andthesuccessorfailure state
+of the session. The AgentOps dashboard offers detailed insights at the session level , including
+metrics like costs,token counts ,errors, and more. Adding a User IDalong with the session
+ID enables further grouping, filtering, and visualization of user-related traces, interactions,
+metrics, and costs.
+, Vol. 1, No. 1, Article . Publication date: November 2025.14 Liming Dong, Qinghua Lu, and Liming Zhu
+Evaluation
+Human Feedback
+Feedback ScoreFeedback ValueEvaluation Registry
+Evaluation Dataset
+Ground TruthTest SetEvaluation Template
+Evaluation Test Case/ScriptEvaluation CriteriaEvaluation MetricsEvaluator Output
+Evaluation Comment/ExplanationsEvaluation Result(Metrics:Score)Evaluator Input
+Agent OutputTool ListPromptAgent Task
+Evaluation NameEvaluation VersionEvaluation ID
+Feedback Loop Collect Feedback
+Fig. 7. Evaluation and Feedback
+Tracing Level Session
+Trace
+Span
+Span Type
+Chain SpanEmbedding SpanRetrieval SpanTask SpanTool SpanAgent SpanWorkflow SpanLLM Span
+StatusOutputInputTimestampTrace IDSpan ID
+StatusOutputInputModelTimestampUser IDSession IDTrace ID
+StatusToken CostTimestampUser IDSession ID
+Fig. 8. Tracing
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 15
+•Traces.Identifying groups of traces where agent is underperforming is essential for improving
+its effectiveness. A trace refers to the detailed recording of a request’s execution path through
+varioussystemcomponentsandservices.InanAIapplication,tracingrevealstheentireprocess
+from when a user submits a query to when the final response is returned, including the actions
+thesystemtakes,thedocumentsretrieved,andthefinalpromptsenttothemodel.Italsoshows
+how much time each step takes and its associated cost, if measurable.
+•Span (Run). A trace consists of one or more spans. The first span represents the root span.
+Each root span represents a request from start to finish. The spans beneath the parent provide
+deeper context for what occurs during a request, detailing the steps that make up the request.
+–LLMspans representacalltoanLLMwhereinputsandoutputsareexpressedastext.LLM
+spans typically do not have child spans, as they are standalone operations representing a
+direct call to an LLM (e.g., a call to OpenAI or Llama).
+–Agent spans represent a dynamic sequence of operations where a large language model
+determinesandexecutesactionsbasedoninputs.Forexample,anagentspanmightrepresent
+a series of reasoning steps controlled by a ReAct agent. Agent spans are often the root span
+for traces representing autonomous or reasoning agents.
+–Workflow spans represent any static sequence of operations. Workflows group together an
+LLM call with supporting contextual operations, such as tool calls, data retrievals, and other
+tasks. For instance, a workflow span could represent a process that takes an arXiv paper link
+and returns a summary, involving a tool call to fetch the paper, text processing tasks, and an
+LLM summarization.
+–Tool spans represent a standalone step in a workflow or agent that involves a call to an
+external program or service, such as a web API or database.
+–Task spans represent a standalone step in a workflow or agent that does not involve a call to
+an external service, such as a data sanitization step before a prompt is submitted to an LLM.
+–Retrieval spans are a subcategory of tool spans and represent a vector search operation
+wheredocumentsarereturnedfromanexternalknowledgebase.Forexample,aretrievalspan
+could trace a similarity search to a vector store to collect relevant documents for augmenting
+a user prompt on a given topic.
+–Embedding spans represent a call to an LLM for generating an embedding. For instance, an
+embeddingspanmightrepresentacalltoOpenAItogetanada-2embeddingforretrieval
+purposes.
+–Chain spans represent the starting point or a link between different LLM application steps.
+For example, a chain span might represent the beginning of a request to an LLM application
+or the connection between a retriever and an LLM call.
+3.8 Monitoring
+Monitoring enables developers to continuously improve the effectiveness, engagement, and cost-
+efficiency of agent operations.
+•Monitoring Metrics When discussing monitoring, most people think of metrics. The specific
+metrics to track depend on what aspect of the agent system you want to monitor. In general,
+there are three types of metrics that developers can track: common model metrics, quality
+performance metrics, and error issues (see Fig.9).
+– Common metrics includetoken usage ,cost, andlatency.
+–Quality metrics (e.g., Toxicity, Human Correctness, Answer Relevance) can be assessed
+through user feedback, model-based scoring, human-in-the-loop evaluations, or custom
+scoring systems.
+, Vol. 1, No. 1, Article . Publication date: November 2025.16 Liming Dong, Qinghua Lu, and Liming Zhu
+Monitoring
+Monitoring Dimensions
+SessionTraceSpanUserModelPromptMonitoring Metrics
+Error e.g., Privacy IssueQuality e.g., Answer RelevanceToken Usage e.g., Tokens Consumed per SpanCost e.g., LLM Cost per SessionLatency e.g., Average Span Time
+Fig. 9. Monitoring
+–Error metrics cantrace errorsinthe execution process,such aslatency orprivacy issues,
+andlinktheseerrorsbacktotheircausaltraces,allowingfordetailedinvestigationdownto
+the span level.
+•Monitoring Dimensions Monitoring can be measured and broken down at various levels:
+session-level ,trace-level ,span-level ,andacrossdifferent users,models,andpromptversions .
+Forexample,developercantrackhowchangestotheagent’spromptaffectthemetricsmentioned
+above.
+4 THREATS TO VALIDITY
+ToolSelectionLimitations: DuetotherapidproliferationofvarioustoolsandAIplatforms,itis
+possible that notall relevant AgentOps tools wereidentified. To address this limitation, weselected
+tools from multiple data sources. The identified tools include both open-source AgentOps tools, such
+as AgentOps and Langfuse, as well as commercial observability platforms like Datadog. We will
+continuetomonitorthedevelopmentoftheAgentOpstoolstackandprovideupdatesinourfuture
+work.
+Data Coverage Limitations: The comprehensive overview of traceable artifacts throughout the
+AgentOpslife-cycleprovidedinthisworkmaynotencompassallpossibledataattributesrelatedtoAI
+agents. To ensure broader coverage of important traceable data across the entire life-cycle of an agent
+andenrichonthedataattributesoutlinedinourpaper,wehavedrawnonsomerelevantacademic
+literature[ 3,28,30]to supportourfindings aswell. However, existingAgentOps/LLMpsplatforms
+do not specifically discussed key aspects of agent execution steps, such as artifacts in planning,
+reasoning, and memory. To address this gap, we will conduct an extensive academic literature review
+focusedontheseartifacts.Somepotentiallyvaluabledata,suchastracelinksacrosstheAgentOps
+life-cycle (from user requests to final output) and interactions between different steps, will be further
+investigated in depth in our future work.
+5 CONCLUSION
+LLM-based agents are receiving increasing attention across various fields, but the reliability of their
+outputs poses significant challenges for developers. The introduction of the AgentOps platform is
+designed to streamline the agent development process, making it more efficient, observable, and
+reliable. In this study, we explored various AgentOps tools and provided an overview of key features
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 17
+within AgentOps platforms. We also presented a comprehensive overview of traceable artifacts
+throughout the agent production life-cycle, aiming to address critical issues related to project tracing
+and monitoring. Our paper offers platform developers a clearer understanding of the agent life-cycle
+andservesasavaluableresourceforimprovingerrormonitoringanddebuggingwithinagentsystems.
+Future work will focus on building upon our findings and gathering real-world traceable artifact
+datasetsfromexistingAgentOpsplatforms.Additionally,wewillfurtherexplorecasestudiesthat
+traceagent outputerrorsbackto intermediatestepsanddata withintheexecutionprocess,withthe
+goal of accelerating debugging and diagnostics.
+DATA AVAILABILITY STATEMENT
+The tool and data presented in this paper is based on open-source projects and on publicly available
+onlince doc, and therefore reproducible.
+REFERENCES
+[1] SomnathBanerjee,SayanLayek,RimaHazra,andAnimeshMukherjee.2024. How(un)ethicalareinstruction-centric
+responsesofLLMs?Unveilingthevulnerabilitiesofsafetyguardrailstoharmfulqueries. arXiv:2402.15302[cs.CL]
+https://arxiv.org/abs/2402.15302
+[2] Tom B. Brown, BenjaminMann, Nick Ryder, Melanie Subbiah, JaredKaplan, Prafulla Dhariwal, Arvind Neelakantan,
+Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+Rewon Child,AdityaRamesh, Daniel M. Ziegler, JeffreyWu, Clemens Winter, ChristopherHesse, Mark Chen, Eric
+Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford,
+Ilya Sutskever, and Dario Amodei. 2020. Language Models are Few-Shot Learners. In Advances in Neural Information
+Processing Systems 33: Annual Conference on Neural Information Processing Systems 2020, NeurIPS 2020, December
+6-12, 2020, virtual , Hugo Larochelle,Marc’Aurelio Ranzato, RaiaHadsell, Maria-Florina Balcan, and Hsuan-TienLin
+(Eds.). https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+[3]AlanChan,CarsonEzell,MaxKaufmann,KevinWei,LewisHammond,HerbieBradley,EmmaBluemke,Nitarshan
+Rajkumar, David Krueger, Noam Kolt, et al .2024. Visibility into AI Agents. In The 2024 ACM Conference on Fairness,
+Accountability, and Transparency . 958–973.
+[4] Harrison Chase. 2024. What is an agent? https://blog.langchain.dev/what-is-an-agent/
+[5]Weizhe Chen, Sven Koenig, and Bistra Dilkina. 2024. RePrompt: Planning by Automatic Prompt Engineering for Large
+Language Models Agents. arXiv:2406.11132 [cs.CL] https://arxiv.org/abs/2406.11132
+[6]Zhixuan Chu, Yan Wang, Longfei Li, Zhibo Wang, Zhan Qin, and Kui Ren. 2024. A Causal Explainable Guardrails for
+Large Language Models. arXiv:2405.04160 [cs.CL] https://arxiv.org/abs/2405.04160
+[7]David"davidad"Dalrymple,JoarSkalse,YoshuaBengio,StuartRussell,MaxTegmark,SanjitSeshia,SteveOmohundro,
+Christian Szegedy, Ben Goldhaber, Nora Ammann, Alessandro Abate, Joe Halpern, Clark Barrett, Ding Zhao, Tan
+Zhi-Xuan, Jeannette Wing, and Joshua Tenenbaum. 2024. Towards Guaranteed Safe AI: A Framework for Ensuring
+Robust and Reliable AI Systems. arXiv:2405.06624 [cs.AI] https://arxiv.org/abs/2405.06624
+[8]KennethF.2023. AgentOps&DebtInfrastructureCompany. https://openscout.substack.com/p/agentops-and-debt-
+infrastructure
+[9]Hang Gao and Yongfeng Zhang. 2024. Memory Sharing for Large Language Model based Agents.
+arXiv:2404.09982 [cs.CL] https://arxiv.org/abs/2404.09982
+[10]Vahid Garousi, Michael Felderer,and Mika V. Mäntylä. 2019. Guidelines for includinggrey literature andconducting
+multivocal literature reviews in software engineering. Inf. Softw. Technol. 106 (2019), 101–121. https://doi.org/10.1016/
+J.INFSOF.2018.09.006
+[11]TimnitGebru,JamieMorgenstern,BrianaVecchione,JenniferWortmanVaughan,HannaM.Wallach,HalDauméIII,and
+Kate Crawford. 2021. Datasheets for datasets. Commun. ACM 64, 12 (2021), 86–92. https://doi.org/10.1145/3458723
+[12]Shubh Goyal, Medha Hira, Shubham Mishra, Sukriti Goyal, Arnav Goel, Niharika Dadu, DB Kirushikesh, Sameep
+Mehta, andNishtha Madaan.2024. LLMGuard:Guarding against UnsafeLLM Behavior. In Proceedings ofthe AAAI
+Conference on Artificial Intelligence , Vol. 38. 23790–23792.
+[13] Chip Huyen. 2024. Building A Generative AI Platform. https://huyenchip.com/2024/07/25/genai-platform.html
+[14]JosephJang.2024. TheEUAIActCompliancethroughObservability. https://live-d9newrelic.pantheonsite.io/blog/best-
+practices/the-eu-artificial-intelligence-act-and-observability?utm_source=tldrdevops
+[15]WenxinJiang,JerinYasmin,JasonJones,NicholasSynovic,JiashenKuo,NathanielBielanski,YuanTian,GeorgeK
+Thiruvathukal, and James C Davis. 2024. Peatmoss: A dataset and initial analysis of pre-trained models in open-source
+, Vol. 1, No. 1, Article . Publication date: November 2025.18 Liming Dong, Qinghua Lu, and Liming Zhu
+software. In 2024 IEEE/ACM 21st International Conference on Mining Software Repositories (MSR) . IEEE, 431–443.
+[16]Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan Perez, Nicholas Schiefer, Zac
+Hatfield-Dodds,NovaDasSarma,EliTran-Johnson,ScottJohnston,SheerElShowk,AndyJones,NelsonElhage,Tristan
+Hume, Anna Chen, Yuntao Bai, Sam Bowman, Stanislav Fort, Deep Ganguli, Danny Hernandez, Josh Jacobson, Jackson
+Kernion,ShaunaKravec,LianeLovitt,KamalNdousse,CatherineOlsson,SamRinger,DarioAmodei,TomBrown,Jack
+Clark, Nicholas Joseph, Ben Mann, Sam McCandlish, Chris Olah, and Jared Kaplan. 2022. Language Models (Mostly)
+KnowWhatTheyKnow. CoRRabs/2207.05221(2022). https://doi.org/10.48550/ARXIV.2207.05221arXiv:2207.05221
+[17]BarbaraKitchenhamandStuartCharters.2007. GuidelinesforperformingSystematicLiteratureReviewsinSoftware
+EngineeringVersion2.3 . TechnicalReport.SoftwareEngineeringGroup,SchoolofComputerScienceandMathematics,
+Keele University and Department of Computer Science University of Durham.
+[18]TakeshiKojima,ShixiangShaneGu,MachelReid,YutakaMatsuo,andYusukeIwasawa.2022. LargeLanguageModels
+are Zero-Shot Reasoners. In Advances in Neural Information Processing Systems 35: Annual Conference on Neural
+Information Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 - December 9, 2022 , Sanmi
+Koyejo,S.Mohamed, A.Agarwal,Danielle Belgrave, K.Cho,and A.Oh(Eds.). http://papers.nips.cc/paper_files/paper/
+2022/hash/8bb0d291acd4acf06ef112099c16f326-Abstract-Conference.html
+[19]Hyeokjin Kwon, Gunmin Lee, Junseo Lee, and Songhwai Oh. 2024. Safe CoR: A Dual-Expert Approach to Integrating
+Imitation Learning and Safe Reinforcement Learning Using Constraint Rewards. arXiv:2407.02245 [cs.RO] https:
+//arxiv.org/abs/2407.02245
+[20]SamuliLaato,TeemuBirkstedt,MattiMäntymäki,MattiMinkkinen,andTommiMikkonen.2022. AIgovernancein
+the system development life cycle: insights on responsible machine learning engineering. In Proceedings of the 1st
+InternationalConference onAI Engineering:Software Engineeringfor AI,CAIN2022, Pittsburgh,Pennsylvania, May
+16-17, 2022 , Ivica Crnkovic (Ed.). ACM, 113–123. https://doi.org/10.1145/3522664.3528598
+[21]JieyiLong.2023. LargeLanguageModelGuidedTree-of-Thought. arXiv:2305.08291[cs.AI] https://arxiv.org/abs/
+2305.08291
+[22]Jiaying Lu, Bo Pan, Jieyi Chen, Yingchaojie Feng, Jingyuan Hu, Yuchen Peng, and Wei Chen. 2024. AgentLens: Visual
+Analysis for Agent Behaviors in LLM-based Autonomous Systems. IEEE Transactions on Visualization and Computer
+Graphics (2024), 1–17. https://doi.org/10.1109/TVCG.2024.3394053
+[23]Neal Mangaokar, Ashish Hooda, Jihye Choi, Shreyas Chandrashekaran, Kassem Fawaz, Somesh Jha, and Atul Prakash.
+2024.PRP:PropagatingUniversalPerturbationstoAttackLargeLanguageModelGuard-Rails. arXiv:2402.15911[cs.CR]
+https://arxiv.org/abs/2402.15911
+[24] Mipsytipsy. 2024. Is It Time To Version Observability? (Signs Point To Yes). https://charity.wtf/author/mipsytipsy/
+[25]Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer,
+InioluwaDeborah Raji,andTimnitGebru. 2019. Model CardsforModelReporting. In Proceedingsof theConference
+onFairness,Accountability,andTransparency,FAT*2019,Atlanta,GA,USA,January29-31,2019 ,danahboydand
+Jamie H. Morgenstern (Eds.). ACM, 220–229. https://doi.org/10.1145/3287560.3287596
+[26] Andrew Ng. 2024. Issue 253. https://www.deeplearning.ai/the-batch/issue-253/
+[27]TraianRebedea,RazvanDinu,MakeshSreedhar,ChristopherParisien,andJonathanCohen.2023. NeMoGuardrails:
+A Toolkit for Controllable and Safe LLM Applications with Programmable Rails. arXiv:2310.10501 [cs.CL]
+https://arxiv.org/abs/2310.10501
+[28]Sander Schulhoff, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, Aayush
+Gupta, HyoJung Han, Sevien Schulhoff, Pranav Sandeep Dulepet, Saurav Vidyadhara, Dayeon Ki, Sweta Agrawal,
+Chau Pham, Gerson Kroiz, Feileen Li, Hudson Tao, Ashay Srivastava, Hevander Da Costa, Saloni Gupta, Megan L.
+Rogers, Inna Goncearenco, Giuseppe Sarli, Igor Galynker, Denis Peskoff, Marine Carpuat, Jules White, Shyamal
+Anadkat, Alexander Hoyle, and Philip Resnik. 2024. The Prompt Report: A Systematic Survey of Prompting Techniques.
+arXiv:2406.06608 [cs.CL] https://arxiv.org/abs/2406.06608
+[29]Sivan Schwartz, Avi Yaeli, and Segev Shlomov. 2023. Enhancing Trust in LLM-Based AI Automation Agents: New
+Considerations and Future Challenges. arXiv:2308.05391 [cs.AI] https://arxiv.org/abs/2308.05391
+[30]Md Shamsujjoha, Qinghua Lu, Dehai Zhao, and Liming Zhu. 2024. Towards AI-Safety-by-Design: A Taxonomy of
+Runtime Guardrailsin Foundation Modelbased Systems. arXiv:2408.02205 [cs.SE] https://arxiv.org/abs/2408.02205
+[31]ShivanshuShekhar,TanishqDubey,KoyelMukherjee,ApoorvSaxena,AtharvTyagi,andNishanthKotla.2024. Towards
+Optimizing the Costs of LLM Usage. arXiv:2402.01742 [cs.CL] https://arxiv.org/abs/2402.01742
+[32]Rasul Tutunov, Antoine Grosnit, Juliusz Ziomek, Jun Wang, and Haitham Bou-Ammar. 2024. Why Can Large Language
+Models Generate Correct Chain-of-Thoughts? arXiv:2310.13571 [cs.CL] https://arxiv.org/abs/2310.13571
+[33]Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, and Ee-Peng Lim. 2023. Plan-and-Solve
+Prompting:ImprovingZero-ShotChain-of-Thought ReasoningbyLargeLanguageModels.In Proceedingsofthe61st
+Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2023, Toronto, Canada,
+July 9-14, 2023 , Anna Rogers, Jordan L. Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational
+, Vol. 1, No. 1, Article . Publication date: November 2025.A Taxonomy of AgentOps for Enabling Observability of Foundation Model based Agents 19
+Linguistics, 2609–2634. https://doi.org/10.18653/V1/2023.ACL-LONG.147
+[34]Qineng Wang, Zihao Wang, Ying Su, Hanghang Tong, and Yangqiu Song. 2024. Rethinking the Bounds of LLM
+Reasoning: Are Multi-Agent Discussions the Key? arXiv:2402.18272 [cs.CL] https://arxiv.org/abs/2402.18272
+[35]Jules White. 2024. Building Living Software Systems with Generative & Agentic AI. arXiv:2408.01768 [cs.SE]
+https://arxiv.org/abs/2408.01768
+[36]Chunqiu Steven Xia, Yinlin Deng, Soren Dunn, and Lingming Zhang. 2024. Agentless: Demystifying LLM-based
+Software Engineering Agents. arXiv:2407.01489 [cs.SE] https://arxiv.org/abs/2407.01489
+[37]ZhuoshengZhang,YaoYao,AstonZhang,XiangruTang,XinbeiMa,ZhiweiHe,YimingWang,MarkGerstein,RuiWang,
+GongshenLiu,andHaiZhao.2023. IgnitingLanguageIntelligence:TheHitchhiker’sGuideFromChain-of-Thought
+Reasoning to Language Agents. arXiv:2311.11797 [cs.CL] https://arxiv.org/abs/2311.11797
+, Vol. 1, No. 1, Article . Publication date: November 2025.

@@ -1,0 +1,20 @@
+pdf_search_task:
+  description: >
+    Answer the customer's questions based on the arxiv PDF.
+    The research agent will search through the PDF to find the relevant answers.
+    Your final answer MUST be clear and accurate, based on the content of the PDF.
+
+    Here is the question:
+    {input}
+  expected_output: >
+    Provide clear and accurate answers to the question based on 
+    the content of the PDF.
+  agent: pdf_searcher
+
+pdf_summary_task:
+  description: >
+    Review the result and create a small report with the main points.
+  expected_output: >
+    A small report with the main points.
+    Formatted as markdown without '```'
+  agent: pdf_summarizer
