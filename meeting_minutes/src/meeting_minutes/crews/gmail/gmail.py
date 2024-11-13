@@ -1,6 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from meeting_minutes.src.meeting_minutes.crews.gmail.tools.gmail_tool import GmailDraftTool
+from .tools.gmail_tool import GmailDraftTool
 
 @CrewBase
 class GmailCrew():

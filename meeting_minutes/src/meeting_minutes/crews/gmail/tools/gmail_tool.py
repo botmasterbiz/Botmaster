@@ -8,6 +8,16 @@ import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+import os.path
+import base64
+from email.mime.text import MIMEText
+
+from .gmail_utility import authenticate_gmail, create_message, create_draft
+
+
+# If modifying these SCOPES, delete the file token.json.
+
+
 
 class GmailDraftToolInput(BaseModel):
     """Input schema for GmailDraftTool."""
@@ -22,22 +32,25 @@ class GmailDraftTool(BaseTool):
     args_schema: Type[BaseModel] = GmailDraftToolInput
 
     def _run(self, body: str) -> str:
-        msg = MIMEMultipart()
-        msg['Subject'] = "Meeting Minutes"
-        msg['From'] = "valor13111@gmail.com"
-        msg['To'] = "tylerreedytlearning@gmail.com"
-        msg.attach(MIMEText(body, 'html'))
-
-        print(msg)
         
         try:
-            with smtplib.SMTP(os.getenv('MAIL_SERVER'), os.getenv('MAIL_PORT')) as server:
-                server.starttls()
-                server.login(os.getenv('MAIL_USERNAME'), os.getenv('MAIL_PASSWORD'))
-                server.send_message(msg)
-        except Exception as e:
-            print(f"Error sending email: {e}")
+            # Authenticate and build the service
+            service = authenticate_gmail()
 
-        return "Email drafted successfully."
+            # Define email parameters
+            sender = 'tylerreedytlearning@gmail.com'
+            to = 'valor13111@gmail.com'
+            subject = 'Meeting Minutes'
+            message_text = body
+
+            # Create the email message
+            message = create_message(sender, to, subject, message_text)
+
+            # Create the draft
+            create_draft(service, 'me', message)
+
+            return "Email drafted successfully"
+        except Exception as e:
+            return f"Error drafting email: {e}"
     
     

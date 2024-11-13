@@ -1,20 +1,9 @@
-summary_transcriber_task:
+meeting_minutes_transcriber_task:
   description: >
     Transcribe the meeting transcript into a summary with the following transcript:
     {transcript}
 
     Write the summary to a file called "summary.txt" in the "meeting_minutes" directory.  This is provided by the tool.
-
-    I would like you to return the summary of the meeting transcript in the following format:
-    - Summary of the meeting transcript
-  expected_output: >
-    A summary of the meeting transcript
-  agent: summary_transcriber
-
-action_items_extractor_task:
-  description: >
-    Extract the action items from the meeting transcript with the following transcript:
-    {transcript}
 
     Write the action items to a file called "action_items.txt" in the "meeting_minutes" directory.  This is provided by the tool.
 
@@ -22,14 +11,23 @@ action_items_extractor_task:
     - Action item 1
     - Action item 2
     - ...
+
+    I would also like you to analyze the sentiment of the meeting transcript and write it to a file called "sentiment.txt" in the "meeting_minutes" directory.  This is provided by the tool.
+
   expected_output: >
-    A list of action items from the meeting transcript
-  agent: action_items_extractor
+    A summary of the meeting transcript and a list of action items.
+  agent: meeting_minutes_transcriber
 
 meeting_minutes_writer_task:
   description: >
-    Write the meeting minutes based on the summary and action items.  Both the summary and action items are provided by the file reader tools.
-    Make sure to take each one, read the files, and put them together into a cohesive document.
+    Write the meeting minutes based on the summary, action items and sentiment.  This should give everything needed to know based on summary and action items.
+    Put them into a nice markdown document.
+
+    - Use Todays Date for the meeting date
+    - Use the company name TylerAI for the company name
+    - User Tyler for the name of the organizer
+    - Create a list of attendees from the transcript (make up some if needed)
+    - The location was on Zoom
   expected_output: >
     A meeting minutes document
   agent: meeting_minutes_writer
