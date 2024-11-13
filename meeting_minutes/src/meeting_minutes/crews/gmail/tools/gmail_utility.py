@@ -5,8 +5,24 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+from email.message import EmailMessage
+
+import markdown
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.compose']
+
+HTML_TEMPLATE = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {final_email_body}
+    </body>
+    </html>
+"""
 
 def authenticate_gmail():
     """Shows basic usage of the Gmail API.
@@ -57,13 +73,27 @@ def create_message(sender, to, subject, message_text):
     Returns:
         An object containing a base64url encoded email object.
     """
-    message = MIMEText(message_text)
-    message['to'] = to
-    message['from'] = sender
-    message['subject'] = subject
-    raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode()
 
-    return {'raw': raw_message}
+    md = markdown.Markdown(extensions=['tables', 'fenced_code', 'nl2br'])
+    
+    # Format the HTML content
+    formatted_html = HTML_TEMPLATE.format(
+        final_email_body=md.convert(message_text)
+    )
+
+    msg = EmailMessage()
+    content=formatted_html
+
+    msg['To'] = to
+    msg['From'] = sender
+    msg['Subject'] = subject
+    msg.add_header('Content-Type','text/html')
+    msg.set_payload(content)
+
+    encodedMsg = base64.urlsafe_b64encode(msg.as_bytes()).decode()
+    
+    # The API expects a dictionary with a 'raw' key containing the encoded message
+    return {'raw': encodedMsg}
 
 def create_draft(service, user_id, message_body):
     """Create and insert a draft email.
