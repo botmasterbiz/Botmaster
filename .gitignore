@@ -1,7 +1,9 @@
-meeting_minutes/src/meeting_minutes/crews/gmail/tools/credentials.json
-meeting_minutes/src/meeting_minutes/crews/gmail/tools/token.json
 __pycache__/
 .env
 .DS_Store
-04 - meeting_minutes/src/meeting_minutes/crews/gmail/tools/credentials.json
-04 - meeting_minutes/src/meeting_minutes/crews/gmail/tools/token.json
+
+meeting_minutes/src/meeting_minutes/crews/gmailcrew/tools/credentials.json
+meeting_minutes/src/meeting_minutes/crews/gmailcrew/tools/token.json
+pdf_rag/db/
+master-crewai-course.code-workspace
+meeting_minutes/agentops.log
