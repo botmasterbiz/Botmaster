@@ -81,7 +81,7 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
         print(f"Draft Crew: {draft_crew}")
 
 def kickoff():
-    session =agentops.init(api_key=os.getenv("AGENTOPS_API_KEY"))
+    session = agentops.init(api_key=os.getenv("AGENTOPS_API_KEY"))
 
     meeting_minutes_flow = MeetingMinutesFlow()
     meeting_minutes_flow.plot()

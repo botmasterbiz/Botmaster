@@ -12,7 +12,7 @@ class GmailToolInput(BaseModel):
 
     body: str = Field(..., description="The body of the email to send.")
 
-@record_tool("GmailTool")
+@record_tool("This is used for gmail draft emails.")
 class GmailTool(BaseTool):
     name: str = "GmailTool"
     description: str = (
