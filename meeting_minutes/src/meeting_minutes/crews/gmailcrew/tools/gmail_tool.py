@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 from .gmail_utility import authenticate_gmail, create_message, create_draft
 from agentops import record_tool
 
+import os
 
 class GmailToolInput(BaseModel):
     """Input schema for GmailTool."""
@@ -24,8 +25,8 @@ class GmailTool(BaseTool):
         try:
             service = authenticate_gmail()
 
-            sender = "tylerreedytlearning@gmail.com"
-            to = "valor13111@gmail.com"
+            sender = os.getenv("GMAIL_SENDER")
+            to = os.getenv("GMAIL_RECIPIENT")
             subject = "Meeting Minutes"
             message_text = body
 
