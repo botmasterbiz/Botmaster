@@ -1,0 +1,10 @@
+crewai==0.10.0
+langchain==0.1.0
+langchain-openai==0.0.2.post1
+langchain-community==0.0.20
+langchain-core==0.1.23
+python-dotenv==1.0.1
+pydantic>=2.4.2
+httpx>=0.24.0
+litellm>=1.0.0
+duckduckgo-search>=3.9.0 

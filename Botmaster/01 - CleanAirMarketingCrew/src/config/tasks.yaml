@@ -1,0 +1,26 @@
+market_research_task:
+  description: >
+    Conduct comprehensive research on air quality issues, market trends, and consumer
+    behavior related to {product}. Focus on understanding the target audience of
+    {target_audience} and their pain points regarding air quality.
+  expected_output: >
+    A detailed report covering current air quality challenges, market analysis,
+    competitor insights, and consumer behavior patterns.
+
+strategy_development_task:
+  description: >
+    Develop a marketing strategy for {product} targeting {target_audience}.
+    Use insights from the market research to create compelling value propositions
+    and positioning statements.
+  expected_output: >
+    A comprehensive marketing strategy document outlining target segments,
+    positioning, key messages, and recommended marketing channels.
+
+content_creation_task:
+  description: >
+    Create {content_type} that effectively communicates the benefits of {product}
+    to {target_audience}. Ensure the content is engaging, scientifically accurate,
+    and motivates action.
+  expected_output: >
+    High-quality marketing content that educates and persuades the target audience,
+    including key benefits, features, and calls to action. 

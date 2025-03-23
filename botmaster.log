@@ -1,0 +1,1109 @@
+2025-03-23 01:16:13,934 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 01:16:13,935 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 01:16:13,936 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 01:16:18,582 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:18,583 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:18,772 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:18,801 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:19,038 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:19,040 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:19,229 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 01:16:19,309 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017550FEB590>
+2025-03-23 01:16:19,309 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000017550FE2FD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 01:16:19,359 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000017550FEB4A0>
+2025-03-23 01:16:19,359 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 01:16:19,360 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 01:16:19,360 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 01:16:19,361 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 01:16:19,361 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 01:16:19,397 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18476'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"fa2d65fecff66605a3f7d3291dd9e3c6372a817ffd4c3158f5c45b8d58b1ccfc"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'D9FB:A6F04:11A45AD:161765E:67DF6947'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 04:16:19 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21947-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'7'), (b'X-Timer', b'S1742703380.593724,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'd8d3a026a8d7ddacb6eea2e3e5bebd6c57df266e'), (b'Expires', b'Sun, 23 Mar 2025 04:21:19 GMT'), (b'Source-Age', b'219')])
+2025-03-23 01:16:19,399 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 01:16:19,400 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 01:16:19,402 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 01:16:19,403 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 01:16:19,403 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 01:16:19,404 - httpcore.connection - DEBUG - close.started
+2025-03-23 01:16:19,404 - httpcore.connection - DEBUG - close.complete
+2025-03-23 01:16:19,900 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:19,901 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:20,102 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:20,103 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:20,331 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 01:16:20,684 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:20,685 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:20,892 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:16:20,893 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:16:25,387 - __main__ - INFO - Successfully imported all crew modules
+2025-03-23 01:16:27,789 - __main__ - INFO - User selected option: 2
+2025-03-23 01:16:30,179 - __main__ - INFO - Initializing AI News Crew with topic: artificial intelligence
+2025-03-23 01:16:30,179 - __main__ - INFO - Target audience: general public
+2025-03-23 01:16:30,179 - __main__ - INFO - Content type: article
+2025-03-23 01:16:30,179 - __main__ - ERROR - Error running AI News Crew: name 'AINewsCrew' is not defined
+2025-03-23 01:16:30,182 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 96, in run_ai_news_crew
+    crew = AINewsCrew(topic=topic, target_audience=audience, content_type=content_type)
+           ^^^^^^^^^^
+NameError: name 'AINewsCrew' is not defined
+
+2025-03-23 01:19:28,962 - __main__ - INFO - User selected option: 2
+2025-03-23 01:19:31,490 - __main__ - INFO - Initializing AI News Crew with topic: artificial intelligence
+2025-03-23 01:19:31,490 - __main__ - INFO - Target audience: general public
+2025-03-23 01:19:31,491 - __main__ - INFO - Content type: article
+2025-03-23 01:19:31,492 - __main__ - ERROR - Error running AI News Crew: name 'AINewsCrew' is not defined
+2025-03-23 01:19:31,505 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 96, in run_ai_news_crew
+    crew = AINewsCrew(topic=topic, target_audience=audience, content_type=content_type)
+           ^^^^^^^^^^
+NameError: name 'AINewsCrew' is not defined
+
+2025-03-23 01:19:31,717 - __main__ - INFO - User selected option: 
+2025-03-23 01:19:31,718 - __main__ - WARNING - Invalid choice entered: 
+2025-03-23 01:22:50,255 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 01:22:50,255 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 01:22:50,256 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 01:24:00,751 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 01:24:00,752 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 01:24:00,752 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 01:24:05,311 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:05,312 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:05,500 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:05,501 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:05,694 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:05,695 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:05,935 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 01:24:05,995 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016FD35FB500>
+2025-03-23 01:24:05,995 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000016FD35F2FD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 01:24:06,042 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016FD35FB410>
+2025-03-23 01:24:06,042 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 01:24:06,043 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 01:24:06,043 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 01:24:06,043 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 01:24:06,044 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 01:24:06,077 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18476'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"fa2d65fecff66605a3f7d3291dd9e3c6372a817ffd4c3158f5c45b8d58b1ccfc"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'D9FB:A6F04:11A45AD:161765E:67DF6947'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 04:24:06 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21941-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'2'), (b'X-Timer', b'S1742703846.263084,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'11ba0fb80b14e9a25a3a6e1c9078a8c0600e68f4'), (b'Expires', b'Sun, 23 Mar 2025 04:29:06 GMT'), (b'Source-Age', b'84')])
+2025-03-23 01:24:06,077 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 01:24:06,078 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 01:24:06,084 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 01:24:06,084 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 01:24:06,085 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 01:24:06,085 - httpcore.connection - DEBUG - close.started
+2025-03-23 01:24:06,085 - httpcore.connection - DEBUG - close.complete
+2025-03-23 01:24:06,509 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:06,511 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:06,694 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:06,737 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:06,975 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 01:24:07,361 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:07,362 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:07,619 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:24:07,621 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:24:12,337 - __main__ - INFO - Successfully imported all crew modules
+2025-03-23 01:24:18,105 - __main__ - INFO - User selected option: 2
+2025-03-23 01:24:22,715 - __main__ - INFO - Initializing AI News Crew with topic: artificial intelligence
+2025-03-23 01:24:22,715 - __main__ - INFO - Target audience: general public
+2025-03-23 01:24:22,715 - __main__ - INFO - Content type: article
+2025-03-23 01:24:22,717 - __main__ - ERROR - Error running AI News Crew: name 'AINewsCrew' is not defined
+2025-03-23 01:24:22,719 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 96, in run_ai_news_crew
+    crew = AINewsCrew(topic=topic, target_audience=audience, content_type=content_type)
+           ^^^^^^^^^^
+NameError: name 'AINewsCrew' is not defined
+
+2025-03-23 01:27:15,972 - __main__ - INFO - User selected option: 2
+2025-03-23 01:30:18,261 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 01:30:18,261 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 01:30:18,262 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 01:30:18,262 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 01:30:22,859 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:22,860 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:23,047 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:23,047 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:23,261 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:23,262 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:23,454 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 01:30:23,509 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A9B2093E90>
+2025-03-23 01:30:23,510 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002A9B20897D0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 01:30:23,559 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002A9B2093DA0>
+2025-03-23 01:30:23,559 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 01:30:23,559 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 01:30:23,559 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 01:30:23,560 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 01:30:23,560 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 01:30:23,597 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18476'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"fa2d65fecff66605a3f7d3291dd9e3c6372a817ffd4c3158f5c45b8d58b1ccfc"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'D9FB:A6F04:11A45AD:161765E:67DF6947'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 04:30:23 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21959-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'4'), (b'X-Timer', b'S1742704224.772607,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'b24f4b19c81e422cc22faebb722e096344326a6d'), (b'Expires', b'Sun, 23 Mar 2025 04:35:23 GMT'), (b'Source-Age', b'160')])
+2025-03-23 01:30:23,597 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 01:30:23,598 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 01:30:23,604 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 01:30:23,604 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 01:30:23,604 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 01:30:23,605 - httpcore.connection - DEBUG - close.started
+2025-03-23 01:30:23,605 - httpcore.connection - DEBUG - close.complete
+2025-03-23 01:30:24,033 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:24,035 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:24,223 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:24,224 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:24,489 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 01:30:24,875 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:24,876 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:30:25,093 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:30:25,094 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:32:41,684 - __main__ - INFO - Initializing AI News Crew with topic: artificial intelligence
+2025-03-23 01:32:41,691 - __main__ - INFO - Target audience: general public
+2025-03-23 01:32:41,691 - __main__ - INFO - Content type: article
+2025-03-23 01:32:41,691 - __main__ - ERROR - Error running AI News Crew: name 'AINewsCrew' is not defined
+2025-03-23 01:32:41,703 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 96, in run_ai_news_crew
+    audience = input("Enter target audience (press Enter for 'general public'): ") or "general public"
+           ^^^^^^^^^^
+NameError: name 'AINewsCrew' is not defined
+
+2025-03-23 01:43:33,576 - __main__ - INFO - User selected option: 2
+2025-03-23 01:43:36,628 - __main__ - INFO - Initializing AI News Crew with topic: artificial intelligence
+2025-03-23 01:43:36,629 - __main__ - INFO - Target audience: general public
+2025-03-23 01:43:36,629 - __main__ - INFO - Content type: article
+2025-03-23 01:43:36,629 - __main__ - ERROR - Error running AI News Crew: name 'AINewsCrew' is not defined
+2025-03-23 01:43:36,637 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 96, in run_ai_news_crew
+    audience = input("Enter target audience (press Enter for 'general public'): ") or "general public"
+           ^^^^^^^^^^
+NameError: name 'AINewsCrew' is not defined
+
+2025-03-23 01:56:37,232 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 01:56:37,233 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 01:56:37,234 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 01:56:37,235 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 01:56:41,278 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:56:41,279 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 01:56:41,455 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 01:56:41,456 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:04:44,082 - __main__ - INFO - Root path: c:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:04:44,082 - __main__ - INFO - Loading environment variables from c:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:04:44,098 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:04:44,098 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:04:44,099 - __main__ - ERROR - Error importing crew modules: No module named 'CleanAirMarketingCrew'
+2025-03-23 10:04:44,099 - __main__ - ERROR - Current Python path: ['c:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\DLLs', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster']
+2025-03-23 10:04:44,102 - __main__ - ERROR - Traceback (most recent call last):
+  File "c:\Users\garja\Cursor Projects\masterclass\launch.py", line 75, in import_crews
+    from CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+ModuleNotFoundError: No module named 'CleanAirMarketingCrew'
+
+2025-03-23 10:04:44,103 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:06:53,675 - __main__ - INFO - Root path: c:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:06:53,677 - __main__ - INFO - Loading environment variables from c:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:06:53,677 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:06:53,677 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:06:53,677 - __main__ - ERROR - Error importing crew modules: No module named 'CleanAirMarketingCrew'
+2025-03-23 10:06:53,677 - __main__ - ERROR - Current Python path: ['c:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\DLLs', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster']
+2025-03-23 10:06:53,682 - __main__ - ERROR - Traceback (most recent call last):
+  File "c:\Users\garja\Cursor Projects\masterclass\launch.py", line 75, in import_crews
+    from CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+ModuleNotFoundError: No module named 'CleanAirMarketingCrew'
+
+2025-03-23 10:06:53,682 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:07:42,372 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:07:42,372 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:07:42,372 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:07:42,372 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:07:47,323 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:47,323 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:47,517 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:47,519 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:47,717 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:47,717 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:47,923 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:07:47,967 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025E223BFCE0>
+2025-03-23 10:07:47,967 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025E223B6ED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:07:48,005 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025E223BFBF0>
+2025-03-23 10:07:48,008 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:07:48,008 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:07:48,008 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:07:48,008 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:07:48,010 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:07:48,038 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:07:48 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4569-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'3'), (b'X-Timer', b'S1742735268.481639,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'8a211edba13f95133efb28dd1fb1ab762ec6307f'), (b'Expires', b'Sun, 23 Mar 2025 13:12:48 GMT'), (b'Source-Age', b'186')])
+2025-03-23 10:07:48,038 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:07:48,040 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:07:48,042 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:07:48,042 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:07:48,042 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:07:48,043 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:07:48,043 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:07:48,486 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:48,486 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:48,669 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:48,669 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:48,915 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:07:49,506 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:49,506 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:49,785 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:07:49,785 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:07:51,255 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.CleanAirMarketingCrew'
+2025-03-23 10:07:51,255 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:07:51,255 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 75, in import_crews
+    from Botmaster.CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\__init__.py", line 6, in <module>
+    from .CleanAirMarketingCrew.crew import CleanAirMarketingCrew
+ModuleNotFoundError: No module named 'Botmaster.CleanAirMarketingCrew'
+
+2025-03-23 10:07:51,255 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:09:01,279 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:09:01,279 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:09:01,280 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:09:01,281 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:09:05,203 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:05,203 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:05,389 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:05,390 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:05,584 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:05,585 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:05,769 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:09:05,860 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001FB16094230>
+2025-03-23 10:09:05,861 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001FB16056ED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:09:05,900 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001FB16094170>
+2025-03-23 10:09:05,901 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:09:05,901 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:09:05,901 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:09:05,902 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:09:05,902 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:09:05,931 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:09:06 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4551-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'1'), (b'X-Timer', b'S1742735346.374787,VS0,VE1'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'6c8534ef012d014b09e8e3ed76085c37108e9c9b'), (b'Expires', b'Sun, 23 Mar 2025 13:14:06 GMT'), (b'Source-Age', b'264')])
+2025-03-23 10:09:05,931 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:09:05,934 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:09:05,936 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:09:05,936 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:09:05,936 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:09:05,936 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:09:05,936 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:09:06,303 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:06,303 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:06,520 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:06,520 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:06,769 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:09:07,089 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:07,089 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:07,299 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:07,300 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:08,501 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.CleanAirMarketingCrew'
+2025-03-23 10:09:08,502 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:09:08,502 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 75, in import_crews
+    from Botmaster.ai_news.crew import AINewsCrew as AINews
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\__init__.py", line 6, in <module>
+    from .CleanAirMarketingCrew.crew import CleanAirMarketingCrew
+ModuleNotFoundError: No module named 'Botmaster.CleanAirMarketingCrew'
+
+2025-03-23 10:09:08,502 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:09:41,145 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:09:41,145 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:09:41,146 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:09:41,146 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:09:44,837 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:44,837 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:45,026 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:45,027 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:45,223 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:45,224 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:45,414 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:09:45,452 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F7C08E4290>
+2025-03-23 10:09:45,452 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001F7C08AAED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:09:45,485 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F7C08E41A0>
+2025-03-23 10:09:45,485 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:09:45,485 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:09:45,485 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:09:45,485 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:09:45,485 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:09:45,517 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:09:45 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4557-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'1'), (b'X-Timer', b'S1742735386.960662,VS0,VE1'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'a45c9a157f0c03eff2fd988b75752b2957d37716'), (b'Expires', b'Sun, 23 Mar 2025 13:14:45 GMT'), (b'Source-Age', b'3')])
+2025-03-23 10:09:45,518 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:09:45,519 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:09:45,521 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:09:45,521 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:09:45,521 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:09:45,522 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:09:45,523 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:09:45,899 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:45,900 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:46,086 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:46,088 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:46,320 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:09:46,669 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:46,670 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:46,873 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:09:46,873 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:09:52,386 - __main__ - ERROR - Error importing crew modules: No module named 'crew'
+2025-03-23 10:09:52,387 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:09:52,388 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 75, in import_crews
+    from Botmaster.ai_news.crew import AINewsCrew as AINews
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\__init__.py", line 17, in <module>
+    from crew import CleanAirMarketingCrew
+ModuleNotFoundError: No module named 'crew'
+
+2025-03-23 10:09:52,388 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:11:37,842 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:11:37,843 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:11:37,844 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:11:37,844 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:11:37,844 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:11:37,845 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src to Python path
+2025-03-23 10:11:37,845 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\poem_flow\src to Python path
+2025-03-23 10:11:42,555 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:42,555 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:42,754 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:42,754 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:42,952 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:42,952 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:43,147 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:11:43,188 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000137A1308C20>
+2025-03-23 10:11:43,188 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000137A12D1550> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:11:43,226 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000137A1308B30>
+2025-03-23 10:11:43,226 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:11:43,231 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:11:43,231 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:11:43,231 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:11:43,231 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:11:43,265 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:11:43 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21975-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'4'), (b'X-Timer', b'S1742735504.703749,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'cb0317bfbc572378316d5b2e03c4e879185bea41'), (b'Expires', b'Sun, 23 Mar 2025 13:16:43 GMT'), (b'Source-Age', b'152')])
+2025-03-23 10:11:43,267 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:11:43,268 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:11:43,270 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:11:43,270 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:11:43,271 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:11:43,272 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:11:43,272 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:11:43,688 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:43,688 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:43,887 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:43,888 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:44,119 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:11:44,488 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:44,488 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:44,705 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:11:44,705 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:11:49,640 - __main__ - ERROR - Error importing crew modules: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src\crew.py)
+2025-03-23 10:11:49,641 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:11:49,642 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from crew import CleanAirMarketingCrew as CleanAirCrew
+ImportError: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src\crew.py)
+
+2025-03-23 10:11:49,642 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:13:05,263 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:13:05,265 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:13:05,266 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:13:05,266 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:13:05,267 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:13:05,267 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:13:05,267 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src to Python path
+2025-03-23 10:13:05,267 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\poem_flow\src to Python path
+2025-03-23 10:13:05,270 - __main__ - ERROR - Error importing crew modules: No module named 'CleanAirMarketingCrew.crew'
+2025-03-23 10:13:05,271 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\poem_flow\\src']
+2025-03-23 10:13:05,275 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from CleanAirMarketingCrew import CleanAirMarketingCrew as CleanAirCrew
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\__init__.py", line 7, in <module>
+    from .crew import CleanAirMarketingCrew
+ModuleNotFoundError: No module named 'CleanAirMarketingCrew.crew'
+
+2025-03-23 10:13:05,275 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:14:54,862 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:14:54,863 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:14:54,864 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:14:54,864 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:14:54,865 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:14:54,865 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:14:54,865 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src to Python path
+2025-03-23 10:14:54,865 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\poem_flow\src to Python path
+2025-03-23 10:14:54,867 - __main__ - ERROR - Error importing crew modules: No module named 'CleanAirMarketingCrew.crew'
+2025-03-23 10:14:54,867 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\poem_flow\\src']
+2025-03-23 10:14:54,871 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from CleanAirMarketingCrew import CleanAirMarketingCrew as CleanAirCrew
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\__init__.py", line 7, in <module>
+    from .crew import CleanAirMarketingCrew
+ModuleNotFoundError: No module named 'CleanAirMarketingCrew.crew'
+
+2025-03-23 10:14:54,871 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:15:26,907 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:15:26,907 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:15:26,908 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:15:26,908 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:15:26,909 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:15:26,909 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:15:26,909 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\ai_news\src to Python path
+2025-03-23 10:15:26,909 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\poem_flow\src to Python path
+2025-03-23 10:15:31,310 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:31,315 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:31,536 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:31,536 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:31,765 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:31,766 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:31,984 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:15:32,033 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000217511E0E60>
+2025-03-23 10:15:32,033 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000217511B2E50> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:15:32,079 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000217511E0D70>
+2025-03-23 10:15:32,079 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:15:32,080 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:15:32,082 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:15:32,082 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:15:32,082 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:15:32,116 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:15:32 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21937-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'2'), (b'X-Timer', b'S1742735733.555632,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'3f3700c8ee1a6e6fafd884d97e46d4c5aa1c9225'), (b'Expires', b'Sun, 23 Mar 2025 13:20:32 GMT'), (b'Source-Age', b'81')])
+2025-03-23 10:15:32,117 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:15:32,118 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:15:32,120 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:15:32,121 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:15:32,121 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:15:32,121 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:15:32,122 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:15:32,557 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:32,557 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:32,782 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:32,783 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:33,042 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:15:33,490 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:33,490 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:33,739 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:15:33,739 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:15:35,905 - __main__ - ERROR - Error importing crew modules: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+2025-03-23 10:15:35,905 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:15:35,906 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 87, in import_crews
+    from crew import PoemFlowCrew as PoemFlow
+ImportError: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+
+2025-03-23 10:15:35,906 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:16:48,820 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:16:48,820 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:16:48,821 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:16:48,822 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:16:48,822 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:16:48,822 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:16:48,822 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:16:53,157 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:53,157 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:53,355 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:53,356 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:53,601 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:53,603 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:53,790 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:16:53,858 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000278F4C00B00>
+2025-03-23 10:16:53,859 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000278F4BD2DD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:16:53,902 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000278F4C00A10>
+2025-03-23 10:16:53,902 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:16:53,903 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:16:53,903 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:16:53,903 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:16:53,903 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:16:53,931 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:16:54 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21948-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'4'), (b'X-Timer', b'S1742735814.378478,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'4e00467dcaf2a4eb36b4059054be677c6ba4e2d8'), (b'Expires', b'Sun, 23 Mar 2025 13:21:54 GMT'), (b'Source-Age', b'163')])
+2025-03-23 10:16:53,931 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:16:53,931 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:16:53,931 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:16:53,931 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:16:53,931 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:16:53,931 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:16:53,931 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:16:54,305 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:54,305 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:54,491 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:54,492 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:54,723 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:16:55,069 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:55,069 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:55,323 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:16:55,323 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:16:57,360 - __main__ - ERROR - Error importing crew modules: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+2025-03-23 10:16:57,360 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:16:57,360 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 87, in import_crews
+    from crew import PoemFlowCrew as PoemFlow
+ImportError: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+
+2025-03-23 10:16:57,360 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:21:23,548 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:21:23,548 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:21:23,549 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:21:23,549 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:21:23,550 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:21:23,550 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:21:23,550 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:21:27,440 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:27,441 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:27,619 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:27,620 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:27,807 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:27,808 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:27,996 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:21:28,030 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ADA2854CE0>
+2025-03-23 10:21:28,030 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001ADA2822DD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:21:28,066 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ADA2854BF0>
+2025-03-23 10:21:28,067 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:21:28,067 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:21:28,067 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:21:28,068 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:21:28,068 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:21:28,097 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:21:28 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4560-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'6'), (b'X-Timer', b'S1742736089.549052,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'5676468cead6e1149d2a066deab38992d84eb673'), (b'Expires', b'Sun, 23 Mar 2025 13:26:28 GMT'), (b'Source-Age', b'104')])
+2025-03-23 10:21:28,098 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:21:28,098 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:21:28,100 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:21:28,101 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:21:28,101 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:21:28,102 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:21:28,102 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:21:28,461 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:28,462 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:28,640 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:28,641 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:28,870 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:21:29,210 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:29,211 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:29,401 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:21:29,401 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:21:31,682 - __main__ - ERROR - Error importing crew modules: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+2025-03-23 10:21:31,683 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:21:31,684 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 87, in import_crews
+    from crew import PoemFlowCrew as PoemFlow
+ImportError: cannot import name 'PoemFlowCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+
+2025-03-23 10:21:31,685 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:23:26,920 - __main__ - INFO - Root path: c:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:23:26,920 - __main__ - INFO - Loading environment variables from c:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:23:26,922 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:23:26,922 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:23:26,922 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:23:26,922 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:23:26,922 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:23:26,922 - __main__ - INFO - Added c:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:23:26,926 - __main__ - ERROR - Error importing crew modules: No module named 'crewai'
+2025-03-23 10:23:26,926 - __main__ - ERROR - Current Python path: ['c:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\DLLs', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'c:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src']
+2025-03-23 10:23:26,929 - __main__ - ERROR - Traceback (most recent call last):
+  File "c:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+  File "c:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\__init__.py", line 7, in <module>
+    from .crew import CleanAirMarketingCrew
+  File "c:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\crew.py", line 1, in <module>
+    from crewai import Agent, Task, Crew, Process
+ModuleNotFoundError: No module named 'crewai'
+
+2025-03-23 10:23:26,929 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:29:20,096 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:29:20,096 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:29:20,098 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:29:20,098 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:29:20,098 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:29:20,098 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:29:20,098 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:30:04,188 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:30:04,189 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:30:04,190 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:30:04,191 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:30:04,191 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:30:04,191 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:30:04,191 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:30:08,069 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:08,070 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:08,269 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:08,270 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:08,458 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:08,459 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:08,647 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:30:08,681 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000262EF544D10>
+2025-03-23 10:30:08,682 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000262EF512DD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:30:08,723 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000262EF544C20>
+2025-03-23 10:30:08,723 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:30:08,724 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:30:08,724 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:30:08,724 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:30:08,724 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:30:08,755 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:30:09 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4528-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'1'), (b'X-Timer', b'S1742736609.213127,VS0,VE1'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'bbb1b464ccef0068ce9622f8c0ee60942e6be1a4'), (b'Expires', b'Sun, 23 Mar 2025 13:35:09 GMT'), (b'Source-Age', b'22')])
+2025-03-23 10:30:08,757 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:30:08,758 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:30:08,761 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:30:08,761 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:30:08,762 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:30:08,762 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:30:08,763 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:30:09,159 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:09,160 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:09,352 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:09,352 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:09,583 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:30:09,959 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:09,961 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:10,167 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:10,168 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:12,247 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.ai_news'
+2025-03-23 10:30:12,247 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:30:12,248 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 86, in import_crews
+    from Botmaster.ai_news.src.crew import AINewsCrew as AINews
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\__init__.py", line 6, in <module>
+    from .ai_news.crew import AINewsCrew
+ModuleNotFoundError: No module named 'Botmaster.ai_news'
+
+2025-03-23 10:30:12,249 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:30:46,851 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:30:46,852 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:30:46,853 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:30:46,853 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:30:46,853 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:30:46,854 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:30:46,854 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:30:50,541 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:50,542 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:50,729 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:50,730 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:50,929 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:50,930 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:51,113 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:30:51,166 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000227A4CE8D40>
+2025-03-23 10:30:51,166 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000227A4CB2F50> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:30:51,205 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000227A4CE8C50>
+2025-03-23 10:30:51,206 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:30:51,206 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:30:51,206 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:30:51,207 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:30:51,207 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:30:51,244 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:30:51 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21932-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'2'), (b'X-Timer', b'S1742736652.693148,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'84b6d7033c862cbb2169cb11e0e8d5b37f9e1f8e'), (b'Expires', b'Sun, 23 Mar 2025 13:35:51 GMT'), (b'Source-Age', b'97')])
+2025-03-23 10:30:51,245 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:30:51,246 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:30:51,251 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:30:51,251 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:30:51,251 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:30:51,252 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:30:51,252 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:30:51,603 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:51,604 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:51,785 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:51,786 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:52,000 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:30:52,290 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:52,291 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:52,489 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:30:52,490 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:30:54,236 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.ai_news'
+2025-03-23 10:30:54,236 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:30:54,238 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from Botmaster.CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\__init__.py", line 6, in <module>
+    from .ai_news.crew import AINewsCrew
+ModuleNotFoundError: No module named 'Botmaster.ai_news'
+
+2025-03-23 10:30:54,238 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:31:26,085 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:31:26,085 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:31:26,086 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:31:26,086 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:31:26,087 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:31:26,087 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:31:26,087 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:31:30,194 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:30,195 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:30,382 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:30,383 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:30,571 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:30,571 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:30,761 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:31:30,863 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000245AF7E8D70>
+2025-03-23 10:31:30,864 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000245AF7B2ED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:31:30,911 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000245AF7E8C80>
+2025-03-23 10:31:30,912 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:31:30,912 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:31:30,912 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:31:30,913 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:31:30,913 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:31:30,949 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:31:31 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21920-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'4'), (b'X-Timer', b'S1742736691.399358,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'bf535d564e2607bfb7c40e2e8591acf77368e441'), (b'Expires', b'Sun, 23 Mar 2025 13:36:31 GMT'), (b'Source-Age', b'137')])
+2025-03-23 10:31:30,950 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:31:30,951 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:31:30,953 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:31:30,953 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:31:30,953 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:31:30,954 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:31:30,955 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:31:31,382 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:31,383 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:31,572 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:31,573 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:31,799 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:31:32,207 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:32,208 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:32,416 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:31:32,417 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:31:34,467 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.CleanAirMarketingCrew'
+2025-03-23 10:31:34,468 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:31:34,469 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from Botmaster.CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+ModuleNotFoundError: No module named 'Botmaster.CleanAirMarketingCrew'
+
+2025-03-23 10:31:34,469 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:32:04,668 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:32:04,669 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:32:04,670 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:32:04,671 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:32:04,671 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:32:04,671 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:32:04,671 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:32:08,791 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:08,793 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:08,983 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:08,984 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:09,229 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:09,230 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:09,416 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:32:09,473 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F0B8924DD0>
+2025-03-23 10:32:09,473 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001F0B88F2ED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:32:09,513 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001F0B8924D10>
+2025-03-23 10:32:09,513 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:32:09,514 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:32:09,514 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:32:09,514 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:32:09,514 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:32:09,543 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:32:10 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4545-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'1'), (b'X-Timer', b'S1742736730.003534,VS0,VE1'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'68e57179477ced4860dafc32f7215efd0c25090f'), (b'Expires', b'Sun, 23 Mar 2025 13:37:10 GMT'), (b'Source-Age', b'143')])
+2025-03-23 10:32:09,545 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:32:09,545 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:32:09,551 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:32:09,552 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:32:09,552 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:32:09,553 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:32:09,553 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:32:09,945 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:09,946 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:10,131 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:10,132 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:10,355 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:32:10,695 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:10,697 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:10,949 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:32:10,950 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:32:12,991 - __main__ - ERROR - Error importing crew modules: No module named 'Botmaster.CleanAirMarketingCrew'
+2025-03-23 10:32:12,992 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:32:12,993 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from Botmaster.CleanAirMarketingCrew.src.crew import CleanAirMarketingCrew as CleanAirCrew
+ModuleNotFoundError: No module named 'Botmaster.CleanAirMarketingCrew'
+
+2025-03-23 10:32:12,993 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:33:01,854 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:33:01,854 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:33:01,855 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:33:01,855 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:33:01,855 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:33:01,855 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:33:01,855 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:33:05,925 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:05,926 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:06,124 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:06,125 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:06,346 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:06,348 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:06,570 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:33:06,639 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025229B60680>
+2025-03-23 10:33:06,639 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025229B2EED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:33:06,687 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025229B60590>
+2025-03-23 10:33:06,688 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:33:06,689 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:33:06,689 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:33:06,689 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:33:06,689 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:33:06,725 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:33:07 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21940-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'8'), (b'X-Timer', b'S1742736787.176117,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'62e0cb1d9c3e5126f1197b5ebb06736e090a08c7'), (b'Expires', b'Sun, 23 Mar 2025 13:38:07 GMT'), (b'Source-Age', b'232')])
+2025-03-23 10:33:06,728 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:33:06,729 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:33:06,732 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:33:06,732 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:33:06,733 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:33:06,733 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:33:06,734 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:33:07,189 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:07,191 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:07,399 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:07,401 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:07,665 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:33:08,128 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:08,129 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:08,383 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:08,384 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:11,468 - __main__ - ERROR - Error importing crew modules: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+2025-03-23 10:33:11,468 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:33:11,470 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 85, in import_crews
+    from crew import CleanAirMarketingCrew as CleanAirCrew
+ImportError: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+
+2025-03-23 10:33:11,470 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:33:36,361 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:33:36,361 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:33:36,362 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:33:36,363 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:33:36,363 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:33:36,363 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:33:36,363 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:33:40,683 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:40,684 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:40,877 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:40,878 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:41,074 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:41,075 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:41,277 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:33:41,343 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EC758E0A70>
+2025-03-23 10:33:41,343 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001EC758AEED0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:33:41,396 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EC75873C50>
+2025-03-23 10:33:41,396 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:33:41,397 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:33:41,397 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:33:41,397 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:33:41,397 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:33:41,431 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:33:41 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21981-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'6'), (b'X-Timer', b'S1742736822.884056,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'e11e2fbdf28c991691f308978d3294f5e2199602'), (b'Expires', b'Sun, 23 Mar 2025 13:38:41 GMT'), (b'Source-Age', b'267')])
+2025-03-23 10:33:41,432 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:33:41,433 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:33:41,438 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:33:41,439 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:33:41,439 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:33:41,440 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:33:41,440 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:33:41,836 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:41,837 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:42,017 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:42,019 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:42,246 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:33:42,661 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:42,662 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:42,920 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:33:42,921 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:33:44,922 - __main__ - ERROR - Error importing crew modules: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+2025-03-23 10:33:44,922 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:33:44,924 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 86, in import_crews
+    from crew import CleanAirMarketingCrew as CleanAirCrew
+ImportError: cannot import name 'CleanAirMarketingCrew' from 'crew' (C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src\crew.py)
+
+2025-03-23 10:33:44,924 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:34:17,725 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:34:17,726 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:34:17,727 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:34:17,727 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:34:17,727 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:34:17,727 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:34:17,727 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:34:21,658 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:21,659 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:21,854 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:21,855 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:22,036 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:22,036 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:22,223 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:34:22,277 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000299E7F34EF0>
+2025-03-23 10:34:22,277 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000299E7F02DD0> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:34:22,309 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000299E7F34620>
+2025-03-23 10:34:22,310 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:34:22,310 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:34:22,311 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:34:22,311 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:34:22,311 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:34:22,340 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:34:22 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4570-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'9'), (b'X-Timer', b'S1742736863.801900,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'45aea953601665538fa9f66486cc105bd8e4d15f'), (b'Expires', b'Sun, 23 Mar 2025 13:39:22 GMT'), (b'Source-Age', b'276')])
+2025-03-23 10:34:22,341 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:34:22,341 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:34:22,346 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:34:22,346 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:34:22,346 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:34:22,347 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:34:22,347 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:34:22,692 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:22,693 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:22,882 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:22,883 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:23,125 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:34:23,456 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:23,458 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:23,663 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:34:23,664 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:34:25,540 - __main__ - ERROR - Error importing crew modules: No module named 'ai_news.crew'
+2025-03-23 10:34:25,541 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass']
+2025-03-23 10:34:25,542 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 90, in import_crews
+    from ai_news.crew import AINewsCrew as AINews
+ModuleNotFoundError: No module named 'ai_news.crew'
+
+2025-03-23 10:34:25,542 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:35:00,389 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:35:00,390 - __main__ - INFO - Loading environment variables from C:\Users\garja\Cursor Projects\masterclass\Botmaster\.env
+2025-03-23 10:35:00,391 - __main__ - WARNING - AGENTOPS_API_KEY not found. Monitoring will be disabled.
+2025-03-23 10:35:00,391 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:35:00,391 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:35:00,392 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:35:00,392 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:35:00,394 - __main__ - ERROR - Error importing crew modules: No module named 'CleanAirMarketingCrew'
+2025-03-23 10:35:00,394 - __main__ - ERROR - Current Python path: ['C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\python312.zip', 'C:\\Users\\garja\\miniconda3\\DLLs', 'C:\\Users\\garja\\miniconda3\\Lib', 'C:\\Users\\garja\\miniconda3', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\win32\\lib', 'C:\\Users\\garja\\AppData\\Roaming\\Python\\Python312\\site-packages\\Pythonwin', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\02 - ai_news\\src', 'C:\\Users\\garja\\Cursor Projects\\crewAI-enterprise-sales-contact-finder-template-main\\src', 'c:\\users\\garja\\cursor projects\\masterclass', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\win32\\lib', 'C:\\Users\\garja\\miniconda3\\Lib\\site-packages\\Pythonwin', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\01 - CleanAirMarketingCrew\\src', 'C:\\Users\\garja\\Cursor Projects\\masterclass\\Botmaster\\03 - poem_flow\\src']
+2025-03-23 10:35:00,397 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 86, in import_crews
+    from CleanAirMarketingCrew.crew import CleanAirMarketingCrew as CleanAirCrew
+ModuleNotFoundError: No module named 'CleanAirMarketingCrew'
+
+2025-03-23 10:35:00,398 - __main__ - ERROR - Failed to import crew modules. Exiting.
+2025-03-23 10:38:04,661 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:38:04,662 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:38:04,662 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:38:04,663 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:38:04,663 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:38:04,663 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:38:04,663 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:38:04,665 - __main__ - ERROR - Error importing crew modules: source code string cannot contain null bytes
+2025-03-23 10:38:04,665 - __main__ - ERROR - Failed to import crew modules
+2025-03-23 10:39:48,704 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:39:48,705 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:39:48,706 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:39:48,706 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:39:48,706 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:39:48,706 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:39:48,706 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:39:48,707 - __main__ - ERROR - Error importing crew modules: source code string cannot contain null bytes
+2025-03-23 10:39:48,707 - __main__ - ERROR - Failed to import crew modules
+2025-03-23 10:40:41,282 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:40:41,284 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:40:41,285 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:40:41,285 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:40:41,285 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:40:41,286 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:40:41,286 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:40:41,287 - __main__ - ERROR - Error importing crew modules: source code string cannot contain null bytes
+2025-03-23 10:40:41,288 - __main__ - ERROR - Failed to import crew modules
+2025-03-23 10:41:45,718 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:41:45,720 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:41:45,721 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:41:45,722 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:41:45,722 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:41:45,722 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:41:45,722 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:41:45,724 - __main__ - ERROR - Error importing crew modules: source code string cannot contain null bytes
+2025-03-23 10:41:45,724 - __main__ - ERROR - Failed to import crew modules
+2025-03-23 10:44:14,761 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:44:14,763 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:44:14,763 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:44:14,764 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:44:14,764 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:44:14,764 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:44:14,764 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:44:19,181 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:19,182 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:19,371 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:19,372 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:19,560 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:19,561 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:19,742 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:44:19,796 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002825ED472F0>
+2025-03-23 10:44:19,797 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002825ED3ED50> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:44:19,840 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002825ED47200>
+2025-03-23 10:44:19,840 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:44:19,840 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:44:19,841 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:44:19,841 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:44:19,841 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:44:19,879 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'8736:3E406F:44AF13:58C103:67DF939C'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:44:20 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-lga21972-LGA'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'1'), (b'X-Timer', b'S1742737460.336192,VS0,VE2'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'd4dc88110c6b18b124c4e57132f243591c8f01da'), (b'Expires', b'Sun, 23 Mar 2025 13:49:20 GMT'), (b'Source-Age', b'3')])
+2025-03-23 10:44:19,880 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:44:19,881 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:44:19,885 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:44:19,886 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:44:19,886 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:44:19,886 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:44:19,887 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:44:20,289 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:20,290 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:20,474 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:20,475 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:20,698 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:44:21,073 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:21,074 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:21,283 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:44:21,284 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:44:23,637 - __main__ - INFO - Successfully imported all crew modules
+2025-03-23 10:44:23,637 - __main__ - INFO - Application started successfully
+2025-03-23 10:46:54,011 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:46:54,013 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:46:54,013 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:46:54,014 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:46:54,014 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:46:54,014 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:46:54,014 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:46:58,694 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:46:58,695 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:46:58,902 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:46:58,904 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:03,404 - __main__ - INFO - Root path: C:\Users\garja\Cursor Projects\masterclass
+2025-03-23 10:54:03,405 - __main__ - INFO - Loaded environment variables from C:\Users\garja\Cursor Projects\masterclass\.env
+2025-03-23 10:54:03,405 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster to Python path
+2025-03-23 10:54:03,407 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src to Python path
+2025-03-23 10:54:03,407 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\02 - ai_news\src to Python path
+2025-03-23 10:54:03,407 - __main__ - INFO - Added C:\Users\garja\Cursor Projects\masterclass\Botmaster\03 - poem_flow\src to Python path
+2025-03-23 10:54:03,407 - __main__ - INFO - Environment setup completed successfully
+2025-03-23 10:54:07,959 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:07,962 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:08,374 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:08,377 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:08,615 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:08,615 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:08,827 - httpcore.connection - DEBUG - connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2025-03-23 10:54:08,873 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020628357350>
+2025-03-23 10:54:08,873 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002062834ED50> server_hostname='raw.githubusercontent.com' timeout=5
+2025-03-23 10:54:08,921 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000020628357260>
+2025-03-23 10:54:08,922 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-03-23 10:54:08,923 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-03-23 10:54:08,923 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-03-23 10:54:08,923 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-03-23 10:54:08,923 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-03-23 10:54:08,953 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'18506'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"17e7a912b0c222535b10a527d5db451f6102c0cd41246e1eae49cb556dc9e318"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'FD90:146C16:42CA76:56E9CA:67DF939B'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Sun, 23 Mar 2025 13:54:09 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-yyz4564-YYZ'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'6'), (b'X-Timer', b'S1742738049.428903,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding,Origin'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'4b1dd36f3ef16ba2f0a127c589557b7d34d520ca'), (b'Expires', b'Sun, 23 Mar 2025 13:59:09 GMT'), (b'Source-Age', b'257')])
+2025-03-23 10:54:08,954 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-03-23 10:54:08,955 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-03-23 10:54:08,969 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-03-23 10:54:08,969 - httpcore.http11 - DEBUG - response_closed.started
+2025-03-23 10:54:08,970 - httpcore.http11 - DEBUG - response_closed.complete
+2025-03-23 10:54:08,970 - httpcore.connection - DEBUG - close.started
+2025-03-23 10:54:08,972 - httpcore.connection - DEBUG - close.complete
+2025-03-23 10:54:09,468 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:09,469 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:09,669 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:09,670 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:09,919 - LiteLLM - DEBUG - [Non-Blocking] Unable to import GenericAPILogger - LiteLLM Enterprise Feature - No module named 'litellm.proxy.enterprise'
+2025-03-23 10:54:10,444 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:10,445 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:10,689 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-03-23 10:54:10,689 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\garja\\miniconda3\\Library\\ssl\\cacert.pem'
+2025-03-23 10:54:13,254 - __main__ - INFO - Successfully imported all crew modules
+2025-03-23 10:54:13,255 - __main__ - INFO - Application started successfully
+2025-03-23 10:54:38,024 - __main__ - INFO - User selected option: 1
+2025-03-23 10:54:38,025 - __main__ - INFO - Initializing Clean Air Marketing Crew
+2025-03-23 10:54:38,090 - __main__ - INFO - Starting Clean Air Marketing Crew execution
+2025-03-23 10:54:38,095 - __main__ - ERROR - Error running Clean Air Marketing Crew: 1 validation error for Agent
+tools.0
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=DuckDuckGoSearchRun(api_w...='auto', source='text')), input_type=DuckDuckGoSearchRun]
+    For further information visit https://errors.pydantic.dev/2.10/v/model_type
+2025-03-23 10:54:38,100 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 84, in run_clean_air_marketing_crew
+    crew.run()
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\crew.py", line 28, in run
+    researcher = Agent(
+                 ^^^^^^
+  File "C:\Users\garja\miniconda3\Lib\site-packages\pydantic\main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Agent
+tools.0
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=DuckDuckGoSearchRun(api_w...='auto', source='text')), input_type=DuckDuckGoSearchRun]
+    For further information visit https://errors.pydantic.dev/2.10/v/model_type
+
+2025-03-23 10:56:02,900 - __main__ - INFO - User selected option: 1
+2025-03-23 10:56:02,903 - __main__ - INFO - Initializing Clean Air Marketing Crew
+2025-03-23 10:56:02,904 - __main__ - INFO - Starting Clean Air Marketing Crew execution
+2025-03-23 10:56:02,906 - __main__ - ERROR - Error running Clean Air Marketing Crew: 1 validation error for Agent
+tools.0
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=DuckDuckGoSearchRun(api_w...='auto', source='text')), input_type=DuckDuckGoSearchRun]
+    For further information visit https://errors.pydantic.dev/2.10/v/model_type
+2025-03-23 10:56:02,909 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\garja\Cursor Projects\masterclass\launch.py", line 84, in run_clean_air_marketing_crew
+    crew.run()
+  File "C:\Users\garja\Cursor Projects\masterclass\Botmaster\01 - CleanAirMarketingCrew\src\CleanAirMarketingCrew\crew.py", line 28, in run
+    researcher = Agent(
+                 ^^^^^^
+  File "C:\Users\garja\miniconda3\Lib\site-packages\pydantic\main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Agent
+tools.0
+  Input should be a valid dictionary or instance of BaseTool [type=model_type, input_value=DuckDuckGoSearchRun(api_w...='auto', source='text')), input_type=DuckDuckGoSearchRun]
+    For further information visit https://errors.pydantic.dev/2.10/v/model_type
+
