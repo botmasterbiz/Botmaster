@@ -7,134 +7,148 @@ os.environ["AGENTOPS_DISABLED"] = "true"
 from typing import List, Optional
 from crewai import Agent, Task, Crew, Process
 from langchain.tools import DuckDuckGoSearchRun
-from pydantic import BaseModel, Field, validator
+from langchain_openai import ChatOpenAI
+from pydantic import BaseModel
 
 class MarketingStrategy(BaseModel):
-    """Marketing strategy model"""
-    target_segments: List[str] = Field(..., description="List of target market segments")
-    positioning: str = Field(..., description="Product positioning statement")
-    key_messages: List[str] = Field(..., description="Key marketing messages")
-    channels: List[str] = Field(..., description="Marketing channels to be used")
+    """Model for marketing strategy output"""
+    unique_selling_propositions: List[str]
+    marketing_channels: List[str]
+    positioning_strategy: str
+    budget_allocation: dict
+    target_segments: List[str]
+    competitive_advantages: List[str]
+    implementation_timeline: str
 
 class MarketingContent(BaseModel):
-    """Marketing content model"""
-    title: str = Field(..., description="Title of the content")
-    body: str = Field(..., description="Main content body")
-    benefits: List[str] = Field(..., description="Key product benefits")
-    call_to_action: str = Field(..., description="Call to action")
+    """Model for marketing content output"""
+    title: str
+    subtitle: str
+    body: str
+    call_to_actions: List[str]
+    key_messages: List[str]
+    brand_voice: str
+    marketing_strategy_alignment: str
+    target_audience_focus: str
 
-class CleanAirMarketingCrew:
-    def __init__(self):
-        self.agents_config = {
-            'research_analyst': {
-                'name': 'Research Analyst',
-                'role': 'Market Research Analyst',
-                'goal': 'Conduct thorough market research and competitor analysis',
-                'backstory': 'Expert in market research with a focus on clean air and environmental products.'
-            },
-            'marketing_strategist': {
-                'name': 'Marketing Strategist',
-                'role': 'Marketing Strategy Expert',
-                'goal': 'Develop effective marketing strategies based on research insights',
-                'backstory': 'Seasoned marketing professional specializing in eco-friendly product marketing.'
-            },
-            'content_creator': {
-                'name': 'Content Creator',
-                'role': 'Creative Content Specialist',
-                'goal': 'Create engaging and persuasive marketing content',
-                'backstory': 'Experienced content creator with expertise in environmental and sustainability messaging.'
-            }
-        }
+class MarketingCrew:
+    def __init__(self, product: str, target_audience: str, content_type: str):
+        self.product = product
+        self.target_audience = target_audience
+        self.content_type = content_type
+        self.search_tool = DuckDuckGoSearchRun()
+        self.llm = ChatOpenAI(
+            model="gpt-4-turbo-preview",
+            temperature=0.7
+        )
 
-    def research_analyst(self) -> Agent:
+    def market_research_task(self) -> Task:
+        return Task(
+            description=f"""Conduct comprehensive market research for {self.product} targeting {self.target_audience}.
+            Focus on:
+            1. Key competitors and their offerings in the educational sector
+            2. Target audience demographics and preferences
+            3. Market trends and opportunities
+            4. Pricing strategies and cost considerations
+            5. Regulatory requirements for HVAC in educational facilities
+            6. Energy efficiency standards and certifications
+            7. Seasonal demand patterns
+            8. Geographic market analysis
+            
+            Provide a detailed analysis in the MarketingStrategy model format.""",
+            agent=self._create_market_research_analyst(),
+            expected_output="A comprehensive market analysis report in the MarketingStrategy model format."
+        )
+
+    def strategy_development_task(self) -> Task:
+        return Task(
+            description=f"""Develop a comprehensive marketing strategy for {self.product} targeting {self.target_audience}.
+            Include:
+            1. Unique selling propositions focusing on educational benefits
+            2. Marketing channels and tactics suitable for educational institutions
+            3. Positioning strategy emphasizing safety and efficiency
+            4. Budget allocation recommendations
+            5. Seasonal marketing plans
+            6. Partnership opportunities with educational organizations
+            7. Compliance with educational institution procurement processes
+            8. ROI metrics and KPIs
+            
+            Provide the strategy in the MarketingStrategy model format.""",
+            agent=self._create_marketing_strategy_expert(),
+            expected_output="A detailed marketing strategy in the MarketingStrategy model format."
+        )
+
+    def content_creation_task(self) -> Task:
+        return Task(
+            description=f"""Create engaging marketing content for {self.product} targeting {self.target_audience}.
+            Focus on:
+            1. Educational benefits and learning environment improvements
+            2. Energy efficiency and cost savings
+            3. Health and safety benefits
+            4. Environmental impact
+            5. Installation and maintenance considerations
+            6. Compliance with educational standards
+            7. Case studies and success stories
+            8. Clear calls-to-action for educational decision-makers
+            
+            Provide the content in the MarketingContent model format.""",
+            agent=self._create_creative_content_specialist(),
+            expected_output="Engaging marketing content in the MarketingContent model format."
+        )
+
+    def _create_market_research_analyst(self) -> Agent:
         return Agent(
-            name=self.agents_config['research_analyst']['name'],
-            role=self.agents_config['research_analyst']['role'],
-            goal=self.agents_config['research_analyst']['goal'],
-            backstory=self.agents_config['research_analyst']['backstory'],
-            tools=[DuckDuckGoSearchRun()],
+            role='Market Research Analyst',
+            goal='Conduct thorough market research and identify opportunities in the educational HVAC sector',
+            backstory="""You are an experienced market research analyst specializing in the HVAC industry, 
+            with particular expertise in educational facility requirements. You have conducted numerous studies 
+            on energy efficiency, indoor air quality, and educational facility management. Your research has 
+            helped companies develop successful strategies for the educational sector.""",
+            tools=[self.search_tool],
+            llm=self.llm,
             verbose=True
         )
 
-    def marketing_strategist(self) -> Agent:
+    def _create_marketing_strategy_expert(self) -> Agent:
         return Agent(
-            name=self.agents_config['marketing_strategist']['name'],
-            role=self.agents_config['marketing_strategist']['role'],
-            goal=self.agents_config['marketing_strategist']['goal'],
-            backstory=self.agents_config['marketing_strategist']['backstory'],
-            tools=[DuckDuckGoSearchRun()],
+            role='Marketing Strategy Expert',
+            goal='Develop effective marketing strategies for HVAC services in educational institutions',
+            backstory="""You are a seasoned marketing strategist with extensive experience in the HVAC industry 
+            and educational sector. You have successfully developed marketing campaigns for major HVAC companies 
+            targeting schools and universities. Your expertise includes educational procurement processes, 
+            facility management, and sustainable building solutions.""",
+            tools=[self.search_tool],
+            llm=self.llm,
             verbose=True
         )
 
-    def content_creator(self) -> Agent:
+    def _create_creative_content_specialist(self) -> Agent:
         return Agent(
-            name=self.agents_config['content_creator']['name'],
-            role=self.agents_config['content_creator']['role'],
-            goal=self.agents_config['content_creator']['goal'],
-            backstory=self.agents_config['content_creator']['backstory'],
-            tools=[],
+            role='Creative Content Specialist',
+            goal='Create compelling marketing content that resonates with educational decision-makers',
+            backstory="""You are a creative content specialist with a strong background in educational marketing 
+            and technical writing. You excel at translating complex HVAC concepts into clear, engaging content 
+            that speaks to school administrators, facility managers, and educational decision-makers. Your work 
+            has helped numerous HVAC companies effectively communicate their value proposition to educational institutions.""",
+            tools=[self.search_tool],
+            llm=self.llm,
             verbose=True
         )
 
-    def market_research_task(self, product: str, target_audience: str) -> Task:
-        return Task(
-            description=f"""Analyze the market for {product} targeting {target_audience}.
-            1. Identify key competitors and their offerings
-            2. Analyze target audience demographics and preferences
-            3. Identify market trends and opportunities
-            4. Evaluate pricing strategies in the market
-            Output a detailed market analysis report in the MarketingStrategy model format.
-            """,
-            agent=self.research_analyst()
-        )
-
-    def strategy_development_task(self, product: str, target_audience: str, research_output: str) -> Task:
-        return Task(
-            description=f"""Based on the market research for {product} targeting {target_audience}, develop a comprehensive marketing strategy.
-            Research findings: {research_output}
-            1. Define unique selling propositions
-            2. Outline marketing channels and tactics
-            3. Develop positioning strategy
-            4. Create budget allocation recommendations
-            Output the marketing strategy in the MarketingStrategy model format.
-            """,
-            agent=self.marketing_strategist()
-        )
-
-    def content_creation_task(self, product: str, target_audience: str, strategy_output: str, content_type: str) -> Task:
-        return Task(
-            description=f"""Create {content_type} content for {product} targeting {target_audience} based on the marketing strategy.
-            Strategy details: {strategy_output}
-            1. Develop key messages and copy
-            2. Incorporate brand voice and tone
-            3. Include call-to-action elements
-            4. Ensure alignment with marketing strategy
-            Output the content in the MarketingContent model format.
-            """,
-            agent=self.content_creator()
-        )
-
-    def get_crew(self, inputs: dict) -> Crew:
-        tasks = [
-            self.market_research_task(
-                product=inputs['product'],
-                target_audience=inputs['target_audience']
-            ),
-            self.strategy_development_task(
-                product=inputs['product'],
-                target_audience=inputs['target_audience'],
-                research_output="{task_0}"
-            ),
-            self.content_creation_task(
-                product=inputs['product'],
-                target_audience=inputs['target_audience'],
-                strategy_output="{task_1}",
-                content_type=inputs['content_type']
-            )
-        ]
-        
-        return Crew(
-            tasks=tasks,
+    def run(self) -> dict:
+        crew = Crew(
+            agents=[
+                self._create_market_research_analyst(),
+                self._create_marketing_strategy_expert(),
+                self._create_creative_content_specialist()
+            ],
+            tasks=[
+                self.market_research_task(),
+                self.strategy_development_task(),
+                self.content_creation_task()
+            ],
             process=Process.sequential,
             verbose=True
-        ) 
+        )
+        result = crew.kickoff()
+        return result 
