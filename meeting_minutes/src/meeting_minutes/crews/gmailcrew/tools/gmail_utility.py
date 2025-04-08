@@ -6,6 +6,9 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from email.message import EmailMessage
+import json
+from google.oauth2 import service_account
+from pathlib import Path
 
 import markdown
 
@@ -25,41 +28,66 @@ HTML_TEMPLATE = """
 """
 
 def authenticate_gmail():
-    """Shows basic usage of the Gmail API.
-        Returns:
-        service: Authorized Gmail API service instance.
-    """
-    # Get the directory where this script is located
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    token_path = os.path.join(current_dir, 'token.json')
-    credentials_path = os.path.join(current_dir, 'credentials.json')
-
+    """Authenticate with Gmail using OAuth 2.0."""
     creds = None
-    # The file token.json stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first time.
-    if os.path.exists(token_path):
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+    token_path = Path(__file__).parent / 'token.json'
+    
+    # Check if we have a valid token
+    if token_path.exists():
+        try:
+            creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
+        except Exception as e:
+            print(f"Error loading token: {e}")
+            creds = None
+
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            if not os.path.exists(credentials_path):
-                raise FileNotFoundError(
-                    f"credentials.json not found at {credentials_path}. "
-                    "Please ensure you have downloaded your OAuth 2.0 credentials "
-                    "from Google Cloud Console and placed them in the correct location."
-                )
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                print(f"Error refreshing token: {e}")
+                creds = None
+
+        if not creds:
+            # Get credentials from environment variables
+            client_id = os.getenv('GMAIL_CLIENT_ID')
+            client_secret = os.getenv('GMAIL_CLIENT_SECRET')
             
-            flow = InstalledAppFlow.from_client_secrets_file(
-                credentials_path, SCOPES)
-            creds = flow.run_local_server(port=0)
+            if not client_id or not client_secret:
+                raise ValueError(
+                    "Gmail OAuth credentials not found in environment variables. "
+                    "Please set GMAIL_CLIENT_ID and GMAIL_CLIENT_SECRET in your .env file."
+                )
+
+            # Create client configuration from environment variables
+            client_config = {
+                "installed": {
+                    "client_id": client_id,
+                    "client_secret": client_secret,
+                    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                    "token_uri": "https://oauth2.googleapis.com/token",
+                    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                    "redirect_uris": ["http://localhost:8080/"]
+                }
+            }
+
+            try:
+                flow = InstalledAppFlow.from_client_config(
+                    client_config,
+                    SCOPES,
+                    redirect_uri='http://localhost:8080/'
+                )
+                creds = flow.run_local_server(port=8080)
+            except Exception as e:
+                print(f"Error during OAuth flow: {e}")
+                raise
+
         # Save the credentials for the next run
         with open(token_path, 'w') as token:
             token.write(creds.to_json())
 
-    service = build('gmail', 'v1', credentials=creds)
-    return service
+    return creds
 
 def create_message(sender, to, subject, message_text):
     """Create a message for an email.
@@ -95,22 +123,28 @@ def create_message(sender, to, subject, message_text):
     # The API expects a dictionary with a 'raw' key containing the encoded message
     return {'raw': encodedMsg}
 
-def create_draft(service, user_id, message_body):
-    """Create and insert a draft email.
-
-    Args:
-    service: Authorized Gmail API service instance.
-    user_id: User's email address. The special value "me"
-             can be used to indicate the authenticated user.
-    message_body: The body of the draft email.
-
-    Returns:
-        The created draft.
-    """
+def create_draft(service, message):
+    """Create a draft email."""
     try:
-        draft = service.users().drafts().create(userId=user_id, body={'message': message_body}).execute()
-        print(f'Draft id: {draft["id"]}\nDraft message: {draft["message"]}')
+        draft = service.users().drafts().create(
+            userId='me',
+            body={'message': {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode()}}
+        ).execute()
         return draft
-    except Exception as error:
-        print(f'An error occurred: {error}')
-        return None
+    except Exception as e:
+        print(f"Error creating draft: {e}")
+        raise
+
+def send_email(service, to, subject, body):
+    """Send an email using Gmail API."""
+    try:
+        message = MIMEText(body)
+        message['to'] = to
+        message['subject'] = subject
+
+        draft = create_draft(service, message)
+        print(f"Draft created: {draft.get('id')}")
+        return draft
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        raise
